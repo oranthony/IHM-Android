@@ -21,7 +21,7 @@
         android:clickable="false"
         android:columnWidth="150dp"
         android:numColumns="auto_fit"
-        android:layout_below="@+id/main_content"
-        android:layout_marginTop="20dp" />
+        android:layout_below="@id/main_content"
+        android:layout_marginTop="70dp" />
 
 </RelativeLayout>
