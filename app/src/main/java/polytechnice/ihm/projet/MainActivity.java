@@ -1,5 +1,6 @@
 package polytechnice.ihm.projet;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -26,7 +27,7 @@ import polytechnice.ihm.projet.Actualities.NewsCustomAdapter;
 import polytechnice.ihm.projet.Actualities.NewsListFragment;
 
 /**
- * Created by antho on 28/03/2016.
+ * Created by anthony LOROSCIO on 28/03/2016.
  */
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
@@ -91,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment: //actualites
                 fragmentClass = FirstFragment.class;
+                getFragmentManager().beginTransaction().replace(R.id.drawer_layout, FirstFragment.newInstance()).commit();
+
                 break;
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
@@ -103,14 +106,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            fragment = (Fragment) fragmentClass.newInstance();
+            //fragment = (Fragment) fragmentClass.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        /*FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();*/
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);

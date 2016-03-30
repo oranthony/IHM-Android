@@ -14,4 +14,5 @@
             android:id="@+id/nav_fourth_fragment"
             android:title="Associations" />
     </group>
+
 </menu>
