@@ -63,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getSupportActionBar().setDisplayShowHomeEnabled(false);
 
-        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        //toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
     }
 
@@ -92,8 +92,10 @@ public class MainActivity extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment: //actualites
                 fragmentClass = FirstFragment.class;
-                getFragmentManager().beginTransaction().replace(R.id.drawer_layout, FirstFragment.newInstance()).commit();
-
+                /*getFragmentManager().beginTransaction()
+                        .replace(R.id.drawer_layout, FirstFragment.newInstance())
+                        .addToBackStack("test")
+                        .commit();*/
                 break;
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
@@ -106,14 +108,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            //fragment = (Fragment) fragmentClass.newInstance();
+            fragment = (Fragment) fragmentClass.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         // Insert the fragment by replacing any existing fragment
-        /*FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();*/
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);

@@ -9,13 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.patricecamousseigt.tutoriel.MainActivity$PlaceholderFragment">
 
-    <!-- The ActionBar displayed at the top -->
-    <include
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/include" />
-
     <TextView
         android:id="@+id/section_label"
         android:layout_width="wrap_content"
@@ -28,7 +21,7 @@
         android:clickable="false"
         android:columnWidth="150dp"
         android:numColumns="auto_fit"
-        android:layout_below="@+id/include"
+        android:layout_below="@+id/main_content"
         android:layout_marginTop="20dp" />
 
 </RelativeLayout>
