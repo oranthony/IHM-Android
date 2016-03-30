@@ -51,7 +51,7 @@ public class FirstFragment extends Fragment {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_news_list, container, false);
+        View rootView = inflater.inflate(R.layout.activity_main, container, false);
         GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
 
