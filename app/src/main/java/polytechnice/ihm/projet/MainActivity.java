@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import polytechnice.ihm.projet.Actualities.NewsCustomAdapter;
+import polytechnice.ihm.projet.Actualities.NewsListFragment;
+
 /**
  * Created by antho on 28/03/2016.
  */
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = null;
         Class fragmentClass;
         switch(menuItem.getItemId()) {
-            case R.id.nav_first_fragment:
+            case R.id.nav_first_fragment: //actualites
                 fragmentClass = FirstFragment.class;
                 break;
             case R.id.nav_second_fragment:
