@@ -2,6 +2,7 @@ package polytechnice.ihm.projet;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import polytechnice.ihm.projet.Actualities.Article;
 import polytechnice.ihm.projet.Actualities.NewsCustomAdapter;
 import polytechnice.ihm.projet.Actualities.NewsDBHelper;
 import polytechnice.ihm.projet.Actualities.NewsListFragment;
+
 
 /**
  * Created by Patrice Camousseigt on 16/03/16.
