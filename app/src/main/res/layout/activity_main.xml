@@ -6,33 +6,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- This LinearLayout represents the contents of the screen  -->
-    <RelativeLayout
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoShadowHeight="4dp">
 
-        <ImageView
-            android:id="@+id/drawer_bg"
-            android:src="@drawable/backgroundmin2"
-            android:scaleType = "centerCrop"
+        <!-- This LinearLayout represents the contents of the screen  -->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:id="@+id/main_content"
+            android:orientation="vertical">
 
-        <!-- The ActionBar displayed at the top -->
-        <include
-            layout="@layout/toolbar"
+            <ImageView
+                android:id="@+id/drawer_bg"
+                android:src="@drawable/backgroundmin2"
+                android:scaleType = "centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- The ActionBar displayed at the top -->
+            <include
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- The main content view where fragments are loaded -->
+            <FrameLayout
+                android:id="@+id/flContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+            </FrameLayout>
+
+            <!-- The arrow button to display the hidden content -->
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@mipmap/down_arrow"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="slideUpDown"/>
+
+        </RelativeLayout>
+
+        <!-- The hidden content which will be revealed -->
+        <RelativeLayout
+            android:id="@+id/hidden_panel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/drawer_layout">
 
-        <!-- The main content view where fragments are loaded -->
-        <FrameLayout
-            android:id="@+id/flContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/TEST"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
 
-        </FrameLayout>
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
     <!-- The navigation drawer that comes from the left -->
     <!-- Note that `android:layout_gravity` needs to be set to 'start' -->

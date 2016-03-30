@@ -1,6 +1,8 @@
 package polytechnice.ihm.projet;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
  * Created by antho on 28/03/2016.
@@ -21,10 +31,17 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle drawerToggle;
     private Toolbar toolbar;
 
+    //Hidden layout
+    private SlidingUpPanelLayout mLayout;
+    private TextView textView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        init();
 
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -42,8 +59,10 @@ public class MainActivity extends AppCompatActivity {
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+
+        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
     }
 
@@ -96,6 +115,16 @@ public class MainActivity extends AppCompatActivity {
         setTitle(menuItem.getTitle());
         // Close the navigation drawer
         mDrawer.closeDrawers();
+    }
+
+    /**
+     * Initialization of the textview and SlidingUpPanelLayout
+     */
+    public void init(){
+
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        textView = (TextView) findViewById(R.id.TEST);
+
     }
 
     @Override
