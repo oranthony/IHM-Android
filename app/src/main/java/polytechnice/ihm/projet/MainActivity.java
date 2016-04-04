@@ -1,30 +1,22 @@
 package polytechnice.ihm.projet;
 
-import android.content.Intent;
+
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
-import polytechnice.ihm.projet.Actualities.NewsCustomAdapter;
-import polytechnice.ihm.projet.Actualities.NewsListFragment;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by anthony LOROSCIO on 28/03/2016.
@@ -39,10 +31,18 @@ public class MainActivity extends AppCompatActivity {
     private SlidingUpPanelLayout mLayout;
     private TextView textView;
 
+    //Twitter
+    private static final String TWITTER_KEY = "5M5te2LlQRfMGhQjWf5x4UTIG";
+    private static final String TWITTER_SECRET = "ZKtfq8V1xUHqGye3B5cJmHrvd1bLy7s6m0DNTdQULiLds1jMaF";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
+
         setContentView(R.layout.activity_main);
 
         init();
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     public void init(){
 
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-        textView = (TextView) findViewById(R.id.TEST);
+        //textView = (TextView) findViewById(R.id.TEST);
 
     }
 
