@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -67,6 +68,21 @@ public class MainActivity extends AppCompatActivity {
         //getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         //toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+
+        //Directly load the landing_page fragrment
+        /*if(savedInstanceState == null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment fragment = null;
+            try {
+                fragment = (Fragment) LandingPageFragment.class.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+
+        }*/
 
     }
 
