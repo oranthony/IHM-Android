@@ -73,7 +73,7 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
     }
 
 
-    public TextView getTitleView() {
-        return titleView;
+    public String getMediaPath() {
+        return mediaPath;
     }
 }

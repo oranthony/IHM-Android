@@ -14,6 +14,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import polytechnice.ihm.projet.FirstFragment;
 import polytechnice.ihm.projet.R;
 import polytechnice.ihm.projet.SecondFragment;
@@ -24,8 +26,8 @@ import polytechnice.ihm.projet.ThirdFragment;
  */
 public class ArticleView extends Fragment {
 
-    private static final String TITRE = "TITLE OK DAC";
-    private TextView title;
+    private static final String TITLE = "TITLE";
+    private static final String URL = "URL";
 
 
     @Override
@@ -39,17 +41,26 @@ public class ArticleView extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.image_article);
+        //image.setImageResource(R.drawable.image_article);
 
-        title = (TextView) view.findViewById(R.id.text_article);
-        //text.setText("IT WORKS !");
+        TextView title = (TextView) view.findViewById(R.id.text_article);
 
         if (getArguments() != null) {
             Bundle args = getArguments();
-            if (args.containsKey(TITRE))
-                title.setText(args.getString(TITRE));
+            if (args.containsKey(TITLE)) {
+                title.setText(args.getString(TITLE));
+                String mediaPath = args.getString(URL);
+
+                if (mediaPath.contains("youtube")) {
+                    mediaPath = toYoutubePreview(mediaPath);
+                }
+
+                Picasso.with(getContext())
+                        .load(mediaPath)
+                        .into(image);
+            }
             else
-                title.setText("CA MARCHE PAS");
+                title.setText("ERREUR LECTURE TITRE");
         }
         else
             System.out.println("getArguments est NULL");
@@ -57,17 +68,17 @@ public class ArticleView extends Fragment {
     }
 
 
-    /*public static ArticleView newInstance() {
-        ArticleView fragment = new ArticleView();
-        return fragment;
-    }*/
-
-    public static ArticleView newInstance(String title) {
+    public static ArticleView newInstance(Article article) {
         ArticleView fragment = new ArticleView();
         Bundle args = new Bundle();
-        args.putString(TITRE, title);
+        args.putString(TITLE, article.getTitle());
+        args.putString(URL, article.getUrl());
         fragment.setArguments(args);
         return fragment;
+    }
+
+    private String toYoutubePreview(String link) {
+        return "http://i1.ytimg.com/vi/" + link.split("=")[1] + "/default.jpg";
     }
 
 }

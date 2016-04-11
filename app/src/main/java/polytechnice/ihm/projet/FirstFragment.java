@@ -54,7 +54,7 @@ public class FirstFragment extends Fragment {
         }
 
         final View rootView = inflater.inflate(R.layout.activity_main, container, false);
-        GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
+        final GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,9 +62,8 @@ public class FirstFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
 
-                Fragment fragment = null;
-                ArticleView fragmentClass;
-                fragmentClass = ArticleView.newInstance("TEXT ENVOYE DANS LE FRAGMENT");
+
+                ArticleView fragmentClass = ArticleView.newInstance((Article) gridView.getItemAtPosition(position));
 
                 System.out.println("====== Click. ID : " + id + " POSITION : " + position + " ======");
                 System.out.println(" - View : " + v);
