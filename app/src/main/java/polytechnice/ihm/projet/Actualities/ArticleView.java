@@ -28,6 +28,7 @@ public class ArticleView extends Fragment {
 
     private static final String TITLE = "TITLE";
     private static final String URL = "URL";
+    private static final String CONTENT = "CONTENT";
 
 
     @Override
@@ -42,22 +43,30 @@ public class ArticleView extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
         //image.setImageResource(R.drawable.image_article);
-
-        TextView title = (TextView) view.findViewById(R.id.text_article);
+        TextView title = (TextView) view.findViewById(R.id.title_article);
+        TextView content = (TextView) view.findViewById(R.id.content_article);
 
         if (getArguments() != null) {
             Bundle args = getArguments();
             if (args.containsKey(TITLE)) {
-                title.setText(args.getString(TITLE));
-                String mediaPath = args.getString(URL);
 
+                /* Image */
+
+                String mediaPath = args.getString(URL);
                 if (mediaPath.contains("youtube")) {
                     mediaPath = toYoutubePreview(mediaPath);
                 }
-
                 Picasso.with(getContext())
                         .load(mediaPath)
                         .into(image);
+
+                /* Title */
+
+                title.setText(args.getString(TITLE));
+
+                /* Content */
+
+                content.setText(args.getString(CONTENT));
             }
             else
                 title.setText("ERREUR LECTURE TITRE");
@@ -73,6 +82,7 @@ public class ArticleView extends Fragment {
         Bundle args = new Bundle();
         args.putString(TITLE, article.getTitle());
         args.putString(URL, article.getUrl());
+        args.putString(CONTENT, article.getContent());
         fragment.setArguments(args);
         return fragment;
     }
