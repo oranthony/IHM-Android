@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showToolBar(){
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000FFFFF")));
+        toolbar.setBackgroundDrawable(new ColorDrawable(0xff8BC34A));
     }
 
     @Override
