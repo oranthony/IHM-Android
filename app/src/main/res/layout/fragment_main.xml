@@ -13,4 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- NewsList -->
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newsList"
+        android:clickable="false"
+        android:columnWidth="150dp"
+        android:numColumns="auto_fit"
+        android:layout_below="@id/toolbar"
+        android:paddingBottom="24px"
+        />
+
 </RelativeLayout>
