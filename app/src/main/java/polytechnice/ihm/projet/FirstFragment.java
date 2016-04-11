@@ -53,7 +53,7 @@ public class FirstFragment extends Fragment {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.activity_main, container, false);
+        final View rootView = inflater.inflate(R.layout.activity_main, container, false);
         GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
 
@@ -63,18 +63,16 @@ public class FirstFragment extends Fragment {
                                     int position, long id) {
 
                 Fragment fragment = null;
-                Class fragmentClass;
-                fragmentClass = ArticleView.class;
-                try {
-                    fragment = (Fragment) fragmentClass.newInstance();
-                } catch (java.lang.InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("\n\n\n\n\n====== OKOKOKOKOK ======\n\n\n\n\n");
+                ArticleView fragmentClass;
+                fragmentClass = ArticleView.newInstance("TEXT ENVOYE DANS LE FRAGMENT");
+
+                System.out.println("====== Click. ID : " + id + " POSITION : " + position + " ======");
+                System.out.println(" - View : " + v);
+                System.out.println(" - ROOTVIEW : " + rootView);
+
+
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.main_content, fragmentClass).commit();
 
                 // Highlight the selected item has been done by NavigationView
                 //menuItem.setChecked(true);
