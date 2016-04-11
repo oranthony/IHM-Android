@@ -19,7 +19,8 @@ import com.squareup.picasso.Picasso;
 
 import polytechnice.ihm.projet.FirstFragment;
 import polytechnice.ihm.projet.R;
-import polytechnice.ihm.projet.SecondFragment;
+
+
 import polytechnice.ihm.projet.ThirdFragment;
 
 /**

@@ -1,8 +1,8 @@
 package polytechnice.ihm.projet;
 
 
+import android.app.ListFragment;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -103,18 +103,16 @@ public class MainActivity extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment: //actualites
                 fragmentClass = FirstFragment.class;
-                /*getFragmentManager().beginTransaction()
-                        .replace(R.id.drawer_layout, FirstFragment.newInstance())
-                        .addToBackStack("test")
-                        .commit();*/
                 showToolBar();
                 break;
-            case R.id.nav_second_fragment:
-                fragmentClass = SecondFragment.class;
+            case R.id.nav_twitter_fragment:
+                fragmentClass = TwitterFragment.class;
+                showToolBar();
                 break;
             case R.id.nav_third_fragment:
                 fragmentClass = ThirdFragment.class;
                 break;
+
             default:
                 fragmentClass = FirstFragment.class;
         }
