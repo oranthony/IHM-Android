@@ -6,11 +6,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <fragment
+    <!--<fragment
         android:name="polytechnice.ihm.projet.LandingPageFragment"
         android:id="@+id/landinng_fragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"/>-->
+
+    <!-- The ActionBar displayed at the top -->
+    <!--<include
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+
+    <!-- The main content view where fragments are loaded -->
+    <!--<FrameLayout
+        android:id="@+id/flContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>-->
+
+
+    <!--<FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/main_fragment_container"/>-->
+
+
+    <LinearLayout
+        android:id="@+id/main_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmin2">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
 
 
     <!-- The navigation drawer that comes from the left -->

@@ -2,6 +2,8 @@ package polytechnice.ihm.projet;
 
 
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -64,25 +66,18 @@ public class MainActivity extends AppCompatActivity {
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
-        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         //getSupportActionBar().setDisplayShowHomeEnabled(false);
 
-        //toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        //toolbar.getBackground().setAlpha(0);
+        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
-        //Directly load the landing_page fragrment
-        /*if(savedInstanceState == null) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            Fragment fragment = null;
-            try {
-                fragment = (Fragment) LandingPageFragment.class.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-            fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        }*/
+        LandingPageFragment fragment = new LandingPageFragment();
+        fragmentTransaction.add(R.id.main_container, fragment);
+        fragmentTransaction.commit();
 
     }
 
@@ -131,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit();
 
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
