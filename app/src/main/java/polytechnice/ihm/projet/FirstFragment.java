@@ -69,7 +69,6 @@ public class FirstFragment extends Fragment {
                 System.out.println(" - View : " + v);
                 System.out.println(" - ROOTVIEW : " + rootView);
 
-
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
 

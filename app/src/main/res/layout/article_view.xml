@@ -19,39 +19,47 @@
             android:layout_height="wrap_content" />
 
         <!--android:layout_centerInParent="true"/-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:id="@+id/image_content"
-            android:layout_marginTop="0dp">
 
-            <ImageView
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="false"
+            android:id="@+id/scrollView">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:id="@+id/imageView"
-                android:layout_below="@id/toolbar"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true" />
+                android:id="@+id/content_general">
 
-        </RelativeLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:id="@+id/imageView"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/title_article"
-            android:layout_below="@id/image_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/title_article"
+                    android:layout_below="@id/imageView"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/content_article"
-            android:layout_below="@id/title_article"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/content_article"
+                    android:layout_below="@id/title_article"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp" />
 
+            </RelativeLayout>
+
+        </ScrollView>
 
     </RelativeLayout>
 

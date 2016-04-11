@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,13 +46,13 @@ public class ArticleView extends Fragment {
         //image.setImageResource(R.drawable.image_article);
         TextView title = (TextView) view.findViewById(R.id.title_article);
         TextView content = (TextView) view.findViewById(R.id.content_article);
+        //content.setMovementMethod(new ScrollingMovementMethod());
 
         if (getArguments() != null) {
             Bundle args = getArguments();
             if (args.containsKey(TITLE)) {
 
                 /* Image */
-
                 String mediaPath = args.getString(URL);
                 if (mediaPath.contains("youtube")) {
                     mediaPath = toYoutubePreview(mediaPath);
@@ -61,11 +62,9 @@ public class ArticleView extends Fragment {
                         .into(image);
 
                 /* Title */
-
                 title.setText(args.getString(TITLE));
 
                 /* Content */
-
                 content.setText(args.getString(CONTENT));
             }
             else
