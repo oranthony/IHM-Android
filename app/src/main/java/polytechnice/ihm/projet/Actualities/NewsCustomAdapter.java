@@ -1,6 +1,9 @@
 package polytechnice.ihm.projet.Actualities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
+
+import polytechnice.ihm.projet.FirstFragment;
 import polytechnice.ihm.projet.R;
 
 

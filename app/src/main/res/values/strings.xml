@@ -11,4 +11,6 @@
 
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="fonctionne">Ca fonctionne : %1$d</string>
+
+    <string name="article">ARTICLE FONCTIONNE</string>
 </resources>
