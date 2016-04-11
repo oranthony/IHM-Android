@@ -21,9 +21,10 @@ import polytechnice.ihm.projet.Actualities.NewsDBHelper;
 
 
 /**
- * Created by Patrice Camousseigt on 16/03/16.
+ * @author Patrice Camousseigt
  */
 public class FirstFragment extends Fragment {
+    NewsCustomAdapter newsCustomAdapterHead;
     NewsCustomAdapter newsCustomAdapter;
 
     @Override
@@ -44,8 +45,11 @@ public class FirstFragment extends Fragment {
             db.openDataBase();
 
             List<Article> articles = db.readDB();
+            List<Article> articleHead = articles.subList(0, 1);
+            List<Article> articlesNew = articles.subList(1, articles.size());
 
-            newsCustomAdapter = new NewsCustomAdapter(getContext(), R.id.newsList, articles);
+            newsCustomAdapterHead = new NewsCustomAdapter(getContext(), R.id.head_articles, articleHead);
+            newsCustomAdapter = new NewsCustomAdapter(getContext(), R.id.newsList, articlesNew);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,8 +58,27 @@ public class FirstFragment extends Fragment {
         }
 
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        final GridView gridViewHead = (GridView) rootView.findViewById(R.id.head_articles);
+        gridViewHead.setAdapter(newsCustomAdapterHead);
+
         final GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
+
+
+        gridViewHead.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+
+
+                ArticleView fragmentClass = ArticleView.newInstance((Article) gridViewHead.getItemAtPosition(position));
+
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
+            }
+        });
+
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -65,15 +88,15 @@ public class FirstFragment extends Fragment {
 
                 ArticleView fragmentClass = ArticleView.newInstance((Article) gridView.getItemAtPosition(position));
 
-                System.out.println("====== Click. ID : " + id + " POSITION : " + position + " ======");
-                System.out.println(" - View : " + v);
-                System.out.println(" - ROOTVIEW : " + rootView);
-
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
 
                 // Highlight the selected item has been done by NavigationView
                 //menuItem.setChecked(true);
+
+                /*System.out.println("====== Click. ID : " + id + " POSITION : " + position + " ======");
+                System.out.println(" - View : " + v);
+                System.out.println(" - ROOTVIEW : " + rootView);*/
 
             }
         });

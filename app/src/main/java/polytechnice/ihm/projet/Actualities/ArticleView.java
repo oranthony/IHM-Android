@@ -43,10 +43,8 @@ public class ArticleView extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
-        //image.setImageResource(R.drawable.image_article);
         TextView title = (TextView) view.findViewById(R.id.title_article);
         TextView content = (TextView) view.findViewById(R.id.content_article);
-        //content.setMovementMethod(new ScrollingMovementMethod());
 
         if (getArguments() != null) {
             Bundle args = getArguments();

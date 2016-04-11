@@ -1,7 +1,7 @@
 package polytechnice.ihm.projet.Actualities;
 
 /**
- * Created by patricecamousseigt on 16/03/2016.
+ * @author Anthony Loroscio
  */
 public class Article {
     private int id;
