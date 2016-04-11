@@ -71,7 +71,7 @@ public class FirstFragment extends Fragment {
 
 
                 FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.main_content, fragmentClass).commit();
+                fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
 
                 // Highlight the selected item has been done by NavigationView
                 //menuItem.setChecked(true);

@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         //getSupportActionBar().setDisplayShowHomeEnabled(false);
 
         //toolbar.getBackground().setAlpha(0);
-        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        //toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.drawer_layout, FirstFragment.newInstance())
                         .addToBackStack("test")
                         .commit();*/
+                showToolBar();
                 break;
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
@@ -144,6 +145,11 @@ public class MainActivity extends AppCompatActivity {
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         //textView = (TextView) findViewById(R.id.TEST);
 
+    }
+
+    public void showToolBar(){
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#000FFFFF")));
     }
 
     @Override
