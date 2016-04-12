@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.digits.sdk.android.Digits;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.tweetui.SearchTimeline;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
@@ -22,25 +23,6 @@ import io.fabric.sdk.android.Fabric;
  */
 public class TwitterFragment extends ListFragment{
 
-    //Twitter
-    private static final String TWITTER_KEY = "uoS5Row3TjfSQmwiFs7qKrQgj";
-    private static final String TWITTER_SECRET = "4VXVrzsPgxfohiqzG5kIZrxCf4B14daEqM9gVToDO0VanjeZdd";
-
-    /*SearchTimeline searchTimeline;
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
-        setSearchTimeline();
-
-
-    }
-
-    private void setSearchTimeline(){
-        searchTimeline = new SearchTimeline.Builder()
-                .query("#twitterflock")
-                .build();
-    }*/
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         //setContentView(R.layout.timeline);
@@ -52,7 +34,7 @@ public class TwitterFragment extends ListFragment{
 
         super.onCreate(savedInstanceState);
 
-        UserTimeline userTimeline = new UserTimeline.Builder().screenName("fabric").build();
+        UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
 
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity().getApplicationContext())
                 .setTimeline(userTimeline)
@@ -60,14 +42,5 @@ public class TwitterFragment extends ListFragment{
         setListAdapter(adapter);
     }
 
-    /*public static TwitterFragment newInstance() {
-        TwitterFragment fragment = new TwitterFragment();
-        return fragment;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-    }*/
 
 }

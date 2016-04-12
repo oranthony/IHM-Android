@@ -21,28 +21,6 @@
         android:id="@+id/main_content"
         android:orientation="vertical">
 
-        <!--<ImageView
-            android:id="@+id/drawer_bg"
-            android:src="@drawable/backgroundmin2"
-            android:scaleType = "centerCrop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />-->
-
-        <!-- The ActionBar displayed at the top -->
-        <!--<include
-            layout="@layout/toolbar"
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />-->
-
-        <!-- The main content view where fragments are loaded -->
-        <!--<FrameLayout
-            android:id="@+id/flContent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-        </FrameLayout>-->
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,17 +56,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/drawer_layout">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-        <!--<TextView
-            android:id="@+id/TEST"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center" />-->
 
     </RelativeLayout>
 

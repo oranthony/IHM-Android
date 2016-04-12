@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
 
     //Twitter
-    private static final String TWITTER_KEY = "5M5te2LlQRfMGhQjWf5x4UTIG";
-    private static final String TWITTER_SECRET = "ZKtfq8V1xUHqGye3B5cJmHrvd1bLy7s6m0DNTdQULiLds1jMaF";
+    private static final String TWITTER_KEY = "uoS5Row3TjfSQmwiFs7qKrQgj";
+    private static final String TWITTER_SECRET = "4VXVrzsPgxfohiqzG5kIZrxCf4B14daEqM9gVToDO0VanjeZdd";
+
 
 
     @Override
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
+
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //getSupportActionBar().setDisplayShowHomeEnabled(false);
