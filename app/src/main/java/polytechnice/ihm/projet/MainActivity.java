@@ -19,12 +19,15 @@ import android.widget.TextView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
+import com.twitter.sdk.android.tweetui.UserTimeline;
+
 import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by anthony LOROSCIO on 28/03/2016.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private DrawerLayout mDrawer;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
@@ -66,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
-
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //getSupportActionBar().setDisplayShowHomeEnabled(false);
