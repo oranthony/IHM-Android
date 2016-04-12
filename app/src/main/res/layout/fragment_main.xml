@@ -15,11 +15,13 @@
 
 
     <GridView
-        android:layout_width="match_parent"
+        android:layout_width="170dp"
         android:layout_height="200dp"
         android:id="@+id/head_articles"
-        android:columnWidth="150dp"
-        android:layout_above="@id/toolbar">
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="-25dp">
 
     </GridView>
 
