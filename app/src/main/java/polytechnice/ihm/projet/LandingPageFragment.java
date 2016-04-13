@@ -10,33 +10,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.twitter.sdk.android.tweetui.SearchTimeline;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 /**
- * Created by antho on 04/04/2016.
+ * Created by anthony LOROSCIO on 04/04/2016.
  */
 public class LandingPageFragment extends ListFragment {
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //return inflater.inflate(R.layout.landing_page, container, false);
-        View view = inflater.inflate(R.layout.landing_page, container, false);
-        return view;
-
-    }
-
-    public void onActivityCreated(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
 
-        UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
+        /*UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
 
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity().getApplicationContext())
                 .setTimeline(userTimeline)
                 .build();
+        setListAdapter(adapter);*/
+
+        final SearchTimeline searchTimeline = new SearchTimeline.Builder()
+                .query("polytechnice")
+                .build();
+        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
+                .setTimeline(searchTimeline)
+                .build();
         setListAdapter(adapter);
+
     }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.landing_page, container, false);
+
+    }
+
 }

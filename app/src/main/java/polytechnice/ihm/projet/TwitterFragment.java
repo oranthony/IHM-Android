@@ -19,28 +19,27 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
 import io.fabric.sdk.android.Fabric;
 
 /**
- * Created by antho on 28/03/2016.
+ * Created by anthony LOROSCIO on 28/03/2016.
  */
 public class TwitterFragment extends ListFragment{
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //setContentView(R.layout.timeline);
-
-        return inflater.inflate(R.layout.timeline, container, false);
-    }
-
-    public void onActivityCreated(Bundle savedInstanceState){
-
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
-
-        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity().getApplicationContext())
-                .setTimeline(userTimeline)
+        final SearchTimeline searchTimeline = new SearchTimeline.Builder()
+                .query("polytechnice")
+                .build();
+        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
+                .setTimeline(searchTimeline)
                 .build();
         setListAdapter(adapter);
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.timeline, container, false);
+    }
 
 }
