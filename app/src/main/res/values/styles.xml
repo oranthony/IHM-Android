@@ -12,6 +12,7 @@
         <item name="android:colorForeground">@color/dgts__text_light</item>
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
