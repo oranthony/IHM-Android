@@ -13,4 +13,5 @@
     <string name="fonctionne">Ca fonctionne : %1$d</string>
 
     <string name="article">ARTICLE FONCTIONNE</string>
+    <string name="image_of_the_article">image of the article</string>
 </resources>

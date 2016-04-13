@@ -31,6 +31,7 @@ public class ArticleView extends Fragment {
     private static final String TITLE = "TITLE";
     private static final String URL = "URL";
     private static final String CONTENT = "CONTENT";
+    private static final String DATE_AUTHOR = "DATE_AUTHOR";
 
 
     @Override
@@ -45,13 +46,13 @@ public class ArticleView extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ImageView image = (ImageView) view.findViewById(R.id.imageView);
         TextView title = (TextView) view.findViewById(R.id.title_article);
+        TextView dateAuthor = (TextView) view.findViewById(R.id.date_author);
         TextView content = (TextView) view.findViewById(R.id.content_article);
 
         if (getArguments() != null) {
             Bundle args = getArguments();
-            if (args.containsKey(TITLE)) {
+            if (args.containsKey(URL)) {
 
-                /* Image */
                 String mediaPath = args.getString(URL);
                 if (mediaPath.contains("youtube")) {
                     mediaPath = toYoutubePreview(mediaPath);
@@ -59,15 +60,20 @@ public class ArticleView extends Fragment {
                 Picasso.with(getContext())
                         .load(mediaPath)
                         .into(image);
+            }
 
-                /* Title */
+            if (args.containsKey(TITLE)) {
+
                 title.setText(args.getString(TITLE));
+            }
 
-                /* Content */
+            if (args.containsKey(CONTENT)) {
+
                 content.setText(args.getString(CONTENT));
             }
-            else
-                title.setText("ERREUR LECTURE TITRE");
+            if(args.containsKey(DATE_AUTHOR)){
+                dateAuthor.setText(args.getString(DATE_AUTHOR));
+            }
         }
         else
             System.out.println("getArguments est NULL");
@@ -78,8 +84,9 @@ public class ArticleView extends Fragment {
     public static ArticleView newInstance(Article article) {
         ArticleView fragment = new ArticleView();
         Bundle args = new Bundle();
-        args.putString(TITLE, article.getTitle());
         args.putString(URL, article.getUrl());
+        args.putString(DATE_AUTHOR, article.getDate() + " " + article.getAuthor());
+        args.putString(TITLE, "[" + article.getCategory() + "] " + article.getTitle());
         args.putString(CONTENT, article.getContent());
         fragment.setArguments(args);
         return fragment;
