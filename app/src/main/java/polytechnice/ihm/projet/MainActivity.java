@@ -70,11 +70,8 @@ public class MainActivity extends AppCompatActivity{
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
+        //Hide the title in the landing page
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //getSupportActionBar().setDisplayShowHomeEnabled(false);
-
-        //toolbar.getBackground().setAlpha(0);
-        //toolbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -101,20 +98,20 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void selectDrawerItem(MenuItem menuItem) {
+
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
+
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment: //actualites
                 fragmentClass = FirstFragment.class;
                 showToolBar();
                 break;
+
             case R.id.nav_twitter_fragment:
                 fragmentClass = TwitterFragment.class;
                 showToolBar();
-                break;
-            case R.id.nav_third_fragment:
-                fragmentClass = ThirdFragment.class;
                 break;
 
             default:

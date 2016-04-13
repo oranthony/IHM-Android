@@ -22,8 +22,8 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
  */
 public class LandingPageFragment extends ListFragment {
 
-    private String htmlText = "<html><body style=\"text-align:justify\"> <style type=\"text/css\">body{color: #fff;} </style> %s </body></Html>";
-    private String appIntroduction = "Bienvenue sur l'application Poly'News. Celle-ci vous permets de consulter l'actualité de l'école grace aux articles écrits par nos meilleurs rédacteurs, ou bien grace au flux twitter de l'école.";
+    private String htmlText = "<html><body> <style type=\"text/css\">body{color: #fff; font-size: 0.9em; text-align:justify;} </style> %s </body></Html>";
+    private String appIntroduction = "Bienvenue sur l'application Poly'News. Celle-ci vous permets de consulter l'actualité de l'école grace aux articles ou bien grace au flux twitter de l'école.";
 
     public void onCreate(Bundle savedInstanceState){
 
