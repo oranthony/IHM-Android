@@ -23,18 +23,10 @@ public class LandingPageFragment extends ListFragment {
 
         super.onCreate(savedInstanceState);
 
-        /*UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
+        UserTimeline userTimeline = new UserTimeline.Builder().screenName("polytechnice").build();
 
-        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity().getApplicationContext())
-                .setTimeline(userTimeline)
-                .build();
-        setListAdapter(adapter);*/
-
-        final SearchTimeline searchTimeline = new SearchTimeline.Builder()
-                .query("polytechnice")
-                .build();
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter.Builder(getActivity())
-                .setTimeline(searchTimeline)
+                .setTimeline(userTimeline)
                 .build();
         setListAdapter(adapter);
 
