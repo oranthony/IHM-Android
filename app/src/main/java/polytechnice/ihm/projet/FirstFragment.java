@@ -94,10 +94,6 @@ public class FirstFragment extends Fragment {
                 // Highlight the selected item has been done by NavigationView
                 //menuItem.setChecked(true);
 
-                /*System.out.println("====== Click. ID : " + id + " POSITION : " + position + " ======");
-                System.out.println(" - View : " + v);
-                System.out.println(" - ROOTVIEW : " + rootView);*/
-
             }
         });
 
