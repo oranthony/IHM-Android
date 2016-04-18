@@ -1,19 +1,14 @@
 package polytechnice.ihm.projet;
 
-import android.graphics.Color;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringDef;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.TextView;
+import android.widget.ListView;
 
-import com.twitter.sdk.android.tweetui.SearchTimeline;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
@@ -21,6 +16,8 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
  * Created by anthony LOROSCIO on 04/04/2016.
  */
 public class LandingPageFragment extends ListFragment {
+
+    private ListView _menuListView;
 
     private String htmlText = "<html><body> <style type=\"text/css\">body{color: #fff; font-size: 0.9em; text-align:justify;} </style> %s </body></Html>";
     private String appIntroduction = "Bienvenue sur l'application Poly'News. Celle-ci vous permet de consulter l'actualité de l'école grâce aux articles et au flux twitter de l'école.";
@@ -43,9 +40,81 @@ public class LandingPageFragment extends ListFragment {
 
         View v = inflater.inflate(R.layout.landing_page, container, false);
 
-        WebView webView = (WebView) v.findViewById(R.id.presentationText);
+        SlidingUpPanelLayout slider = (SlidingUpPanelLayout)v.findViewById(R.id.sliding_layout);
+
+        /*WebView webView = (WebView) v.findViewById(R.id.presentationText);
         webView.loadDataWithBaseURL(null, String.format(htmlText, appIntroduction), "text/html", "utf-8", null);
-        webView.setBackgroundColor(Color.TRANSPARENT);
+        webView.setBackgroundColor(Color.TRANSPARENT);*/
+
+        _menuListView = (ListView) v.findViewById(android.R.id.list);
+
+        /*_menuListView.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Disallow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        // Allow ScrollView to intercept touch events.
+                        v.getParent().requestDisallowInterceptTouchEvent(false);
+                        break;
+                }
+
+                // Handle ListView touch events.
+                v.onTouchEvent(event);
+                return true;
+            }
+        });*/
+
+
+        _menuListView.setOnTouchListener(new View.OnTouchListener() {
+
+            public boolean onTouch(View v, MotionEvent event) {
+                return (event.getAction() == MotionEvent.ACTION_MOVE);
+            }
+        });
+
+        slider.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener(){
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+
+            }
+
+            @Override
+            public void onPanelCollapsed(View panel) {
+
+                _menuListView.setOnTouchListener( new View.OnTouchListener(){
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        return true;
+                    }
+                });
+
+            }
+
+            @Override
+            public void onPanelExpanded(View panel) {
+                // Enable Scrolling by removing the OnTouchListner
+                _menuListView.setOnTouchListener(null);
+            }
+
+            @Override
+            public void onPanelAnchored(View panel) {
+
+            }
+
+            @Override
+            public void onPanelHidden(View panel) {
+                // Disable Scrolling by setting up an OnTouchListener to do nothing
+
+            }
+            // Override here
+        });
 
         return v;
 
