@@ -1,11 +1,13 @@
 package polytechnice.ihm.projet;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ListView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -42,9 +44,9 @@ public class LandingPageFragment extends ListFragment {
 
         SlidingUpPanelLayout slider = (SlidingUpPanelLayout)v.findViewById(R.id.sliding_layout);
 
-        /*WebView webView = (WebView) v.findViewById(R.id.presentationText);
+        WebView webView = (WebView) v.findViewById(R.id.presentationText);
         webView.loadDataWithBaseURL(null, String.format(htmlText, appIntroduction), "text/html", "utf-8", null);
-        webView.setBackgroundColor(Color.TRANSPARENT);*/
+        webView.setBackgroundColor(Color.TRANSPARENT);
 
         _menuListView = (ListView) v.findViewById(android.R.id.list);
 
