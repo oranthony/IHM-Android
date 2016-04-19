@@ -24,12 +24,12 @@ import polytechnice.ihm.projet.Actualities.NewsDBHelper;
  * @author Patrice Camousseigt
  */
 public class FirstFragment extends Fragment {
+
     NewsCustomAdapter newsCustomAdapterHead;
     NewsCustomAdapter newsCustomAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         NewsDBHelper db = null;
         try {
@@ -90,9 +90,6 @@ public class FirstFragment extends Fragment {
 
                 FragmentManager fragmentManager = getFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
-
-                // Highlight the selected item has been done by NavigationView
-                //menuItem.setChecked(true);
 
             }
         });

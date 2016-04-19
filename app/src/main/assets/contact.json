@@ -1,0 +1,7 @@
+{
+  "people": [
+    { "name":"Bilbo" , "familyname":"Lehobbit" },
+    { "name":"Bob" , "familyname":"Lescargot" },
+    { "name":"Jack" , "familyname":"Sparrow" }
+  ]
+}

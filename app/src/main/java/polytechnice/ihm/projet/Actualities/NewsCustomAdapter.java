@@ -18,7 +18,7 @@ import polytechnice.ihm.projet.R;
 
 
 /**
- * Created by Patrice Camousseigt on 27/03/2016.
+ * @author Patrice Camousseigt
  */
 public class NewsCustomAdapter extends ArrayAdapter<Article> {
 

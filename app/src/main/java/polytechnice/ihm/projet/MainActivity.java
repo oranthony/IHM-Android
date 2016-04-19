@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity{
         Class fragmentClass;
 
         switch(menuItem.getItemId()) {
-            case R.id.nav_first_fragment: //actualites
+            case R.id.nav_first_fragment: //actualities
                 fragmentClass = FirstFragment.class;
                 showToolBar();
                 break;
@@ -114,8 +114,15 @@ public class MainActivity extends AppCompatActivity{
                 showToolBar();
                 break;
 
+            case R.id.nav_contact:
+                fragmentClass = ThirdFragment.class;
+                showToolBar();
+                break;
+
             default:
                 fragmentClass = FirstFragment.class;
+                showToolBar();
+                break;
         }
 
         try {
