@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/lien_contact"
-    android:background="@color/tw__solid_white">
+    android:background="@color/tw__solid_white"
+    android:paddingLeft="2dp">
 
 
 

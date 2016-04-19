@@ -1,7 +1,19 @@
 {
   "people": [
-    { "name":"Bilbo" , "familyname":"Lehobbit" },
-    { "name":"Bob" , "familyname":"Lescargot" },
-    { "name":"Jack" , "familyname":"Sparrow" }
+    { "name":"Jonhy" , "familyname":"BOND", "email":"Johny.BOND@unice.fr" },
+    { "name":"Hélène" , "familyname":"COLLAVIZZA", "email":"Helene.COLLAVIZZA@unice.fr" },
+    { "name":"Anne-Marie" , "familyname":"DERY PINNA", "email":"Anne-Marie.PINNA@unice.fr" },
+    { "name":"Catherine" , "familyname":"FARON ZUCKER", "email":"Catherine.FARON-ZUCKER@unice.fr" },
+    { "name":"Marc" , "familyname":"GAETANO", "email":"Marc.GAETANO@unice.fr" },
+    { "name":"Claude" , "familyname":"GALAN", "email":"Claude.GALAN@unice.fr" },
+    { "name":"Erick" , "familyname":"GALLESIO", "email":"Erick.GALLESIO@unice.fr" },
+    { "name":"Michele" , "familyname":"GERZAIN", "email":"Michele.GERZAIN@unice.fr" },
+    { "name":"Anne-Marie" , "familyname":"HUGUES", "email":"Anne-Marie.HUGUES@unice.fr" },
+    { "name":"Benoit" , "familyname":"MIRAMOND", "email":"Benoit.MIRAMOND@unice.fr" },
+    { "name":"Sebastien" , "familyname":"MOSSER", "email":"Sebastien.MOSSER@unice.fr" },
+    { "name":"Igor" , "familyname":"LITOVSKY", "email":"Igor.LITOVSKY@unice.fr" },
+    { "name":"Claudine" , "familyname":"PEYRAT", "email":"Claudine.PEYRAT@unice.fr" },
+    { "name":"Christopher" , "familyname":"SCHALL", "email":"Christopher.SCHALL@unice.fr" },
+    { "name":"Francoise" , "familyname":"STOREY", "email":"Francoise.STOREY@unice.fr" }
   ]
 }

@@ -1,12 +1,15 @@
 package polytechnice.ihm.projet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,7 +31,7 @@ import polytechnice.ihm.projet.Contacts.Person;
 public class ThirdFragment extends Fragment {
 
     ContactsAdapter contactsAdapter;
-    private static String FILE = "contact.json";
+    private final static String FILE = "contact.json";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,21 +45,29 @@ public class ThirdFragment extends Fragment {
 
         System.out.println("JSONDATA" + jsondata);
 
-        ArrayList<Person> ar =  new ParserContact(jsondata).getPeople();
+        final ArrayList<Person> people =  new ParserContact(jsondata).getPeople();
 
-        /*for(Person per : ar)
-        {
-            System.out.println("===============");
-            System.out.println("====== name : " + per.getName());
-            System.out.println("====== familyname : " + per.getFamilyname());
-        }*/
-
-        contactsAdapter = new ContactsAdapter(getContext(), R.id.lien_contact, ar);
+        contactsAdapter = new ContactsAdapter(getContext(), R.id.lien_contact, people);
 
         final View rootView = inflater.inflate(R.layout.list_contacts, container, false);
 
         final ListView listView = (ListView) rootView.findViewById(R.id.lien_contact);
         listView.setAdapter(contactsAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { people.get(position).getEmail() });
+                intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
+                intent.putExtra(Intent.EXTRA_TEXT, "mail body");
+                startActivity(Intent.createChooser(intent, ""));
+
+            }
+        });
+
 
 
         return rootView;

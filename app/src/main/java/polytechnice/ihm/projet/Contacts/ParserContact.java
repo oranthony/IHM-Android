@@ -38,10 +38,13 @@ public class ParserContact {
                 JsonObject jsonObject = companyList.get(i).getAsJsonObject();
                 String name = jsonObject.get("name").getAsString();
                 String familyname = jsonObject.get("familyname").getAsString();
+                String email = jsonObject.get("email").getAsString();
+
 
                 Person p = new Person();
                 p.setName(name);
                 p.setFamilyname(familyname);
+                p.setEmail(email);
 
                 people.add(i, p);
             }

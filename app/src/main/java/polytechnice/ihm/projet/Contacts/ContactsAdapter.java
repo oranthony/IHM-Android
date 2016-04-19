@@ -32,9 +32,10 @@ public class ContactsAdapter extends ArrayAdapter<Person> {
         Person person = getItem(position);
 
         TextView nameContact = (TextView) convertView.findViewById(R.id.name_contact);
-        nameContact.setText(person.getName());
-        TextView familynameContact = (TextView) convertView.findViewById(R.id.familyname_contact);
-        familynameContact.setText(person.getFamilyname());
+        nameContact.setText(person.getName() + " " + person.getFamilyname());
+
+        TextView emailContact = (TextView) convertView.findViewById(R.id.email_contact);
+        emailContact.setText(person.getEmail());
 
         return convertView;
     }
