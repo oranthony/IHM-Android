@@ -1,8 +1,10 @@
 package polytechnice.ihm.projet;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,7 +80,6 @@ public class FirstFragment extends Fragment {
                 fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
             }
         });
-
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

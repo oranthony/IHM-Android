@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:id="@+id/lien_contact"
     android:background="@color/tw__solid_white"
-    android:paddingLeft="2dp">
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp">
 
 
 
