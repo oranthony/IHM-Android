@@ -9,6 +9,7 @@ public class Person {
     String familyname;
     String email;
     String room;
+    String phonenumber;
 
     public void setName(String name) {
         this.name = name;
@@ -26,6 +27,10 @@ public class Person {
         this.room = room;
     }
 
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
     public String getName() {
         return name;
     }
@@ -40,5 +45,9 @@ public class Person {
 
     public String getRoom() {
         return room;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
     }
 }

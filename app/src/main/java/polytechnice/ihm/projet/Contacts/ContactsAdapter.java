@@ -41,6 +41,9 @@ public class ContactsAdapter extends ArrayAdapter<Person> {
         TextView emailContact = (TextView) convertView.findViewById(R.id.email_contact);
         emailContact.setText(Html.fromHtml(person.getEmail()));
 
+        TextView phonenumercontact = (TextView) convertView.findViewById(R.id.phonenumber_contact);
+        phonenumercontact.setText("Tel : " + person.getPhonenumber());
+
         return convertView;
     }
 

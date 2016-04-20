@@ -6,16 +6,13 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,18 +52,22 @@ public class ThirdFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Log.i("Send email", "");
                 Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, people.get(position).getEmail());
                 intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
                 intent.putExtra(Intent.EXTRA_TEXT, "mail body");
                 intent.setType("text/plain");
-                startActivity(Intent.createChooser(intent, ""));
+                try {
+                    startActivity(Intent.createChooser(intent, ""));
+                    Log.i("Finished sending email.", "");
+                } catch (android.content.ActivityNotFoundException ex) {
+                    Toast.makeText(getContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
-
-
 
         return rootView;
     }

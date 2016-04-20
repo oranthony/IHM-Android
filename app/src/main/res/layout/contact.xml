@@ -23,9 +23,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/phonenumber_contact"
+        android:paddingLeft="3dp"
+        android:autoLink="phone"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/email_contact"
-        android:paddingLeft="3dp" />
-
-
+        android:paddingLeft="3dp"/>
 
 </LinearLayout>

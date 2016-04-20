@@ -41,11 +41,13 @@ public class ParserContact {
                 JsonElement familynameElement = jsonObject.get("familyname");
                 JsonElement emailElement = jsonObject.get("email");
                 JsonElement roomElement = jsonObject.get("room");
+                JsonElement phonenumberElement = jsonObject.get("phonenumber");
 
                 String name = "";
                 String familyname = "";
                 String email = "";
                 String room = "";
+                String phonenumber = "";
 
                 if(nameElement != null)
                     name = nameElement.getAsString();
@@ -55,12 +57,15 @@ public class ParserContact {
                     email = emailElement.getAsString();
                 if(roomElement != null)
                     room = roomElement.getAsString();
+                if(phonenumberElement != null)
+                    phonenumber = phonenumberElement.getAsString();
 
                 Person p = new Person();
                 p.setName(name);
                 p.setFamilyname(familyname);
                 p.setEmail(email);
                 p.setRoom(room);
+                p.setPhonenumber(phonenumber);
 
                 people.add(i, p);
             }

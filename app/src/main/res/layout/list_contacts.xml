@@ -7,6 +7,4 @@
     android:background="@color/tw__solid_white"
     android:divider="@android:color/transparent">
 
-
-
 </ListView>
