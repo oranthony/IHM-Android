@@ -47,10 +47,10 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         final File blurredImage = new File(getActivity().getFilesDir() + BLURRED_IMG_PATH);
 
         if (!blurredImage.exists()) {
-            generateBlurImage(blurredImage, v);
+            generateBlurImage(blurredImage);
         } else {
             // The image has been found. Let's update the view
-            updateView(v);
+            updateView();
         }
         mScrollView.setOnScrollViewListener(this);
 
@@ -62,7 +62,7 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         super.onCreate(savedInstanceState);
     }
 
-    private void generateBlurImage(final File blurredImage, final View v) {
+    private void generateBlurImage(final File blurredImage) {
         // launch the progressbar in ActionBar
         //setSupportProgressBarIndeterminateVisibility(true);
         new Thread(new Runnable() {
@@ -73,12 +73,12 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
                 options.inSampleSize = 2;
                 Bitmap image = BitmapFactory.decodeResource(getResources(),
                         R.drawable.dsc6671, options);
-                Bitmap newImg = Blur.fastblur(SIPresentationFragment.this.getContext() /*ou getActivity*/, image, 24);
+                Bitmap newImg = Blur.fastblur(SIPresentationFragment.this.getContext(), image, 24);
                 ImageUtils.storeImage(newImg, blurredImage);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        updateView(v);
+                        updateView();
                         // And finally stop the progressbar
                         //setSupportProgressBarIndeterminateVisibility(false);
                     }
@@ -87,7 +87,7 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         }).start();
     }
 
-    private void updateView(View v) {
+    private void updateView() {
         final int screenWidth = ImageUtils.getScreenWidth(getActivity());
         Bitmap bmpBlurred = BitmapFactory.decodeFile(getActivity().getFilesDir()
                 + BLURRED_IMG_PATH);
@@ -109,7 +109,7 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         float paddingTop = layoutScroll.getTop();
 
         if (paddingTop != 0) {
-            alpha = (float) (t + 1) / paddingTop;
+            alpha = (float) (t) / paddingTop;
             alphaBackground = alpha;
         }
 
@@ -117,8 +117,8 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         if (alpha > 1) {
             alpha = 1;
         }
-        if (alphaBackground > 0.85f) {
-            alphaBackground = 0.85f;
+        if (alphaBackground > 0.10f) {
+            alphaBackground = 0.10f;
         }
 
         // Apply on the ImageView if needed
