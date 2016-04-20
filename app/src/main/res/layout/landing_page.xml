@@ -42,6 +42,15 @@
             android:layout_below="@+id/imageView1"
             android:layout_alignParentStart="true" />
 
+        <ImageView
+            android:id="@+id/arrowUp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/arrowup"
+            android:layout_marginBottom="83dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 
     <!-- The hidden content which will be revealed -->

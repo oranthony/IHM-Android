@@ -3,6 +3,7 @@ package polytechnice.ihm.projet;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +19,12 @@ import com.twitter.sdk.android.tweetui.UserTimeline;
  * Created by anthony LOROSCIO on 04/04/2016.
  */
 public class LandingPageFragment extends ListFragment {
+
+    //Sliding panel layout
+    private SlidingUpPanelLayout  slider;
+
+    //Swipe up detector
+    private GestureDetector gDetector;
 
     private ListView _menuListView;
 
@@ -42,7 +49,7 @@ public class LandingPageFragment extends ListFragment {
 
         View v = inflater.inflate(R.layout.landing_page, container, false);
 
-        SlidingUpPanelLayout slider = (SlidingUpPanelLayout)v.findViewById(R.id.sliding_layout);
+        slider = (SlidingUpPanelLayout)v.findViewById(R.id.sliding_layout);
 
         WebView webView = (WebView) v.findViewById(R.id.presentationText);
         webView.loadDataWithBaseURL(null, String.format(htmlText, appIntroduction), "text/html", "utf-8", null);
@@ -50,9 +57,10 @@ public class LandingPageFragment extends ListFragment {
 
         _menuListView = (ListView) v.findViewById(android.R.id.list);
 
-        _menuListView.setOnTouchListener( new View.OnTouchListener(){
+        v.findViewById(R.id.arrowUp).setOnTouchListener( new View.OnTouchListener(){
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                slider.setPanelState(SlidingUpPanelLayout.PanelState.EXPANDED);
                 return true;
             }
         });
