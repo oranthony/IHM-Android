@@ -23,6 +23,7 @@ import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import io.fabric.sdk.android.Fabric;
+import polytechnice.ihm.projet.siPresentation.SIPresentationFragment;
 
 /**
  * Created by anthony LOROSCIO on 28/03/2016.
@@ -116,6 +117,11 @@ public class MainActivity extends AppCompatActivity{
 
             case R.id.nav_contact:
                 fragmentClass = ThirdFragment.class;
+                showToolBar();
+                break;
+
+            case R.id.nav_si_presentation:
+                fragmentClass = SIPresentationFragment.class;
                 showToolBar();
                 break;
 

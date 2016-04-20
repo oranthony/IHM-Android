@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tw__composer_deep_gray">
+
+    <ImageView
+        android:id="@+id/normalImage"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/dsc6671"
+        android:layout_height="@dimen/blur_image_height" />
+
+    <ImageView
+        android:id="@+id/blurredImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/blur_image_height"
+        android:alpha="0" />
+
+    <ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/blur_image_height"
+        android:alpha="0"
+        android:src="#fff" />
+
+    <polytechnice.ihm.projet.siPresentation.BlurScrollView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/fakeId"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:background="@android:color/transparent" />
+
+            <LinearLayout
+                android:id="@+id/layoutScroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff"
+                android:orientation="vertical">
+
+            <!--<Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF69C4FF"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:text=" Put here your views " />-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="La troisième année de la spécialité informatique constitue un socle commun et permet l'apprentissage des bases fondamentales et techniques de l'informatique et du métier d'ingénieur.\n \n
+
+Le quart des enseignements relève des Sciences Humaines et Sociales ou de l'enseignement des langues. Les cours de connaissances de l'entreprise, de techniques d'expression et de gestion de projet préparent l'èlève à son entrée dans le monde de l'entreprise.\n \n
+
+Un autre quart est consacré aux fondements de l'informatique.\n \n
+
+Une moitié des enseignements concerne l'informatique appliquée Le dernier quart est consacré à l'architecture et l'assembleur.\n \n
+
+En parallèle de ces enseignements, tout au long de l'année, des mini projets permettent aux élèves d'appliquer immédiatement leurs nouvelles connaissances. \n \n
+
+A la fin de chaque semestre un projet d'une semaine en programmation est proposé. \n \n
+
+
+A l'issue de cette troisième année, les élèves doivent effectuer un stage d'au moins un mois, dit stage de connaissance de l'entreprise. \n\n"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </polytechnice.ihm.projet.siPresentation.BlurScrollView>
+
+</RelativeLayout>
