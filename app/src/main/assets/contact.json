@@ -1,19 +1,19 @@
 {
   "people": [
     { "name":"Jonhy" , "familyname":"BOND", "email":"Johny.BOND@unice.fr", "room":"203" },
-    { "name":"Hélène" , "familyname":"COLLAVIZZA", "email":"Helene.COLLAVIZZA@unice.fr", "room":"203" },
-    { "name":"Anne-Marie" , "familyname":"DERY PINNA", "email":"Anne-Marie.PINNA@unice.fr", "room":"203" },
-    { "name":"Catherine" , "familyname":"FARON ZUCKER", "email":"Catherine.FARON-ZUCKER@unice.fr", "room":"203" },
-    { "name":"Marc" , "familyname":"GAETANO", "email":"Marc.GAETANO@unice.fr", "room":"203" },
-    { "name":"Claude" , "familyname":"GALAN", "email":"Claude.GALAN@unice.fr", "room":"203" },
-    { "name":"Erick" , "familyname":"GALLESIO", "email":"Erick.GALLESIO@unice.fr", "room":"203" },
-    { "name":"Michele" , "familyname":"GERZAIN", "email":"Michele.GERZAIN@unice.fr", "room":"203" },
-    { "name":"Anne-Marie" , "familyname":"HUGUES", "email":"Anne-Marie.HUGUES@unice.fr", "room":"203" },
-    { "name":"Benoit" , "familyname":"MIRAMOND", "email":"Benoit.MIRAMOND@unice.fr", "room":"203" },
-    { "name":"Sebastien" , "familyname":"MOSSER", "email":"Sebastien.MOSSER@unice.fr", "room":"203" },
-    { "name":"Igor" , "familyname":"LITOVSKY", "email":"Igor.LITOVSKY@unice.fr", "room":"203" },
-    { "name":"Claudine" , "familyname":"PEYRAT", "email":"Claudine.PEYRAT@unice.fr", "room":"203" },
-    { "name":"Christopher" , "familyname":"SCHALL", "email":"Christopher.SCHALL@unice.fr", "room":"203" },
-    { "name":"Francoise" , "familyname":"STOREY", "email":"Francoise.STOREY@unice.fr", "room":"203" }
+    { "name":"Hélène" , "familyname":"COLLAVIZZA", "email":"Helene.COLLAVIZZA@unice.fr", "room":"302" },
+    { "name":"Anne-Marie" , "familyname":"DERY PINNA", "email":"Anne-Marie.PINNA@unice.fr", "room":"105" },
+    { "name":"Catherine" , "familyname":"FARON ZUCKER", "email":"Catherine.FARON-ZUCKER@unice.fr", "room":"400" },
+    { "name":"Marc" , "familyname":"GAETANO", "email":"Marc.GAETANO@unice.fr", "room":"223" },
+    { "name":"Claude" , "familyname":"GALAN", "email":"Claude.GALAN@unice.fr", "room":"228" },
+    { "name":"Erick" , "familyname":"GALLESIO", "email":"Erick.GALLESIO@unice.fr", "room":"401" },
+    { "name":"Michele" , "familyname":"GERZAIN", "email":"Michele.GERZAIN@unice.fr", "room":"512" },
+    { "name":"Anne-Marie" , "familyname":"HUGUES", "email":"Anne-Marie.HUGUES@unice.fr", "room":"108" },
+    { "name":"Benoit" , "familyname":"MIRAMOND", "email":"Benoit.MIRAMOND@unice.fr", "room":"219" },
+    { "name":"Sebastien" , "familyname":"MOSSER", "email":"Sebastien.MOSSER@unice.fr", "room":"306" },
+    { "name":"Igor" , "familyname":"LITOVSKY", "email":"Igor.LITOVSKY@unice.fr", "room":"145" },
+    { "name":"Claudine" , "familyname":"PEYRAT", "email":"Claudine.PEYRAT@unice.fr", "room":"104" },
+    { "name":"Christopher" , "familyname":"SCHALL", "email":"Christopher.SCHALL@unice.fr", "room":"414" },
+    { "name":"Francoise" , "familyname":"STOREY", "email":"Francoise.STOREY@unice.fr", "room":"309" }
   ]
 }
