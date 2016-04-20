@@ -59,32 +59,22 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="La troisième année de la spécialité informatique constitue un socle commun et permet l'apprentissage des bases fondamentales et techniques de l'informatique et du métier d'ingénieur.
+                    android:text="La troisième année de la spécialité informatique constitue un socle commun et permet l'apprentissage des bases fondamentales et techniques de l'informatique et du métier d'ingénieur.\n \n
 
-Le quart des enseignements relève des Sciences Humaines et Sociales ou de l'enseignement des langues. En troisième année, l'anglais est obligatoire, une seconde langue vivante doit être choisie au second semestre. Les cours de connaissances de l'entreprise, de techniques d'expression et de gestion de projet préparent l'èlève à son entrée dans le monde de l'entreprise.
+Le quart des enseignements relève des Sciences Humaines et Sociales ou de l'enseignement des langues. Les cours de connaissances de l'entreprise, de techniques d'expression et de gestion de projet préparent l'èlève à son entrée dans le monde de l'entreprise.\n \n
 
-Un autre quart est consacré aux fondements de l'informatique, sous forme soit de mathématiques pour l'informaticien (logique, mathématiques discrètes, statistiques) soit d'informatique théorique (langages formels et automates, algorithmique et structure de données).
+Un autre quart est consacré aux fondements de l'informatique.\n \n
 
-Une moitié des enseignements concerne l'informatique appliquée: L'enseignement de la programmation occupe lui aussi un quart du temps total avec des cours de programmation orientée objet et de programmation C, accompagnés de cours de génie logiciel et d'assurance qualité logiciel. Le dernier quart est consacré à l'architecture et l'assembleur, aux systèmes d'exploitation, et à un cours Signal Son et Image pour l'informaticien.
+Une moitié des enseignements concerne l'informatique appliquée Le dernier quart est consacré à l'architecture et l'assembleur.\n \n
 
-Les projets de 3ème année
+En parallèle de ces enseignements, tout au long de l'année, des mini projets permettent aux élèves d'appliquer immédiatement leurs nouvelles connaissances. \n \n
 
-En parallèle de ces enseignements, tout au long de l'année, des mini projets permettent aux élèves d'appliquer immédiatement leurs nouvelles connaissances. Au second semestre, les mini projets sont dédiés aux déficients visuels, et organisés en collaboration avec des instituts spécialisés de Nice.  En cours de projet les élèves rencontrent les futurs utilisateurs. Une présentation finale des projets a lieu lors de la journée DeVINT
-
-                A la fin de chaque semestre un projet d'une semaine en programmation est proposé.
-
-                Le stage de 3ème année
-
-                A l'issue de cette troisième année, les élèves doivent effectuer un stage d'au moins un mois, dit stage de connaissance de l'entreprise. Il peut s'agir d'un stage ouvrier, mais il peut également s'agir d'un stage linguistique - option fortement recommandée par l'école."/>
+A la fin de chaque semestre un projet d'une semaine en programmation est proposé. \n \n
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="_juanjos_"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp" />
-        </LinearLayout>
+A l'issue de cette troisième année, les élèves doivent effectuer un stage d'au moins un mois, dit stage de connaissance de l'entreprise. \n\n"/>
+
+            </LinearLayout>
         </LinearLayout>
 
     </polytechnice.ihm.projet.siPresentation.BlurScrollView>
