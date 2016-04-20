@@ -57,10 +57,10 @@ public class ThirdFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[] { people.get(position).getEmail() });
+                intent.putExtra(Intent.EXTRA_EMAIL, people.get(position).getEmail());
                 intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
                 intent.putExtra(Intent.EXTRA_TEXT, "mail body");
+                intent.setType("text/plain");
                 startActivity(Intent.createChooser(intent, ""));
 
             }
