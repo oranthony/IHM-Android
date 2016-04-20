@@ -8,6 +8,7 @@ public class Person {
     String name;
     String familyname;
     String email;
+    String room;
 
     public void setName(String name) {
         this.name = name;
@@ -21,6 +22,10 @@ public class Person {
         this.email = email;
     }
 
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
     public String getName() {
         return name;
     }
@@ -31,5 +36,9 @@ public class Person {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getRoom() {
+        return room;
     }
 }

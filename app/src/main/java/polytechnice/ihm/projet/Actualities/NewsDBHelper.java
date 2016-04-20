@@ -18,8 +18,8 @@ import polytechnice.ihm.projet.BuildConfig;
 
 public class NewsDBHelper extends SQLiteOpenHelper {
 
-    private static String DB_PATH = "/data/data/" + BuildConfig.APPLICATION_ID + "/";
-    private static String DB_NAME = "polynews_database";
+    private final static String DB_PATH = "/data/data/" + BuildConfig.APPLICATION_ID + "/";
+    private final static String DB_NAME = "polynews_database";
 
     private SQLiteDatabase myDataBase;
     private final Context myContext;
@@ -79,6 +79,7 @@ public class NewsDBHelper extends SQLiteOpenHelper {
             cursor.moveToNext();
         }
         cursor.close();
+        close();
         return list;
     }
 

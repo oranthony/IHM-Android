@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
@@ -36,15 +37,30 @@ public class ParserContact {
             for(int i = 0; i < companyList.size(); i++)
             {
                 JsonObject jsonObject = companyList.get(i).getAsJsonObject();
-                String name = jsonObject.get("name").getAsString();
-                String familyname = jsonObject.get("familyname").getAsString();
-                String email = jsonObject.get("email").getAsString();
+                JsonElement nameElement = jsonObject.get("name");
+                JsonElement familynameElement = jsonObject.get("familyname");
+                JsonElement emailElement = jsonObject.get("email");
+                JsonElement roomElement = jsonObject.get("room");
 
+                String name = "";
+                String familyname = "";
+                String email = "";
+                String room = "";
+
+                if(nameElement != null)
+                    name = nameElement.getAsString();
+                if(familynameElement != null)
+                    familyname = familynameElement.getAsString();
+                if(emailElement != null)
+                    email = emailElement.getAsString();
+                if(roomElement != null)
+                    room = roomElement.getAsString();
 
                 Person p = new Person();
                 p.setName(name);
                 p.setFamilyname(familyname);
                 p.setEmail(email);
+                p.setRoom(room);
 
                 people.add(i, p);
             }

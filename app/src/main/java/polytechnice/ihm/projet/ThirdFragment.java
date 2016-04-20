@@ -43,8 +43,6 @@ public class ThirdFragment extends Fragment {
             e.printStackTrace();
         }
 
-        System.out.println("JSONDATA" + jsondata);
-
         final ArrayList<Person> people =  new ParserContact(jsondata).getPeople();
 
         contactsAdapter = new ContactsAdapter(getContext(), R.id.lien_contact, people);

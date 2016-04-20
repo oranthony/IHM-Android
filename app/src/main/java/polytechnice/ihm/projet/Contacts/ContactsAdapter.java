@@ -1,6 +1,7 @@
 package polytechnice.ihm.projet.Contacts;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +35,11 @@ public class ContactsAdapter extends ArrayAdapter<Person> {
         TextView nameContact = (TextView) convertView.findViewById(R.id.name_contact);
         nameContact.setText(person.getName() + " " + person.getFamilyname());
 
+        TextView roomcontact = (TextView) convertView.findViewById(R.id.room_contact);
+        roomcontact.setText("Salle : " + person.getRoom());
+
         TextView emailContact = (TextView) convertView.findViewById(R.id.email_contact);
-        emailContact.setText(person.getEmail());
+        emailContact.setText(Html.fromHtml(person.getEmail()));
 
         return convertView;
     }
