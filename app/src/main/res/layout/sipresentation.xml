@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/cardview_light_background">
+    android:background="@color/tw__composer_deep_gray">
 
     <ImageView
         android:id="@+id/normalImage"
@@ -45,7 +45,7 @@
                 android:id="@+id/layoutScroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#aaffffff"
+                android:background="#ffffffff"
                 android:orientation="vertical">
 
             <!--<Button
