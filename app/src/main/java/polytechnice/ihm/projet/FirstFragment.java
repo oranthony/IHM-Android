@@ -27,8 +27,8 @@ import polytechnice.ihm.projet.Actualities.NewsDBHelper;
  */
 public class FirstFragment extends Fragment {
 
-    NewsCustomAdapter newsCustomAdapterHead;
-    NewsCustomAdapter newsCustomAdapter;
+    private NewsCustomAdapter newsCustomAdapterHead;
+    private NewsCustomAdapter newsCustomAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

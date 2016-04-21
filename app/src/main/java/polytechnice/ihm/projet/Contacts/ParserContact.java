@@ -21,8 +21,8 @@ import polytechnice.ihm.projet.BuildConfig;
  */
 public class ParserContact {
 
-    ArrayList<Person> people = new ArrayList<>();
-    JsonObject jsonObject;
+    private ArrayList<Person> people = new ArrayList<>();
+    private JsonObject jsonObject;
 
 
     public ParserContact(String jsonString) {

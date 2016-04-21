@@ -23,7 +23,6 @@ import polytechnice.ihm.projet.R;
 public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
     private String mediaPath;
-    private TextView titleView;
 
     public NewsCustomAdapter(Context context, int resource) {
         super(context, resource);
@@ -43,7 +42,7 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
         Article article = getItem(position);
 
-        titleView = (TextView) convertView.findViewById(R.id.title);
+        TextView titleView = (TextView) convertView.findViewById(R.id.title);
         TextView dateView = (TextView) convertView.findViewById(R.id.date);
         TextView categorieView = (TextView) convertView.findViewById(R.id.categorie);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.previewImage);

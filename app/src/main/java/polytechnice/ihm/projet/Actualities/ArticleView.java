@@ -54,7 +54,7 @@ public class ArticleView extends Fragment {
             if (args.containsKey(URL)) {
 
                 String mediaPath = args.getString(URL);
-                if (mediaPath.contains("youtube")) {
+                if (mediaPath != null && mediaPath.contains("youtube")) {
                     mediaPath = toYoutubePreview(mediaPath);
                 }
                 Picasso.with(getContext())

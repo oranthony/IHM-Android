@@ -5,11 +5,11 @@ package polytechnice.ihm.projet.Contacts;
  */
 public class Person {
 
-    String name;
-    String familyname;
-    String email;
-    String room;
-    String phonenumber;
+    private String name;
+    private String familyname;
+    private String email;
+    private String room;
+    private String phonenumber;
 
     public void setName(String name) {
         this.name = name;

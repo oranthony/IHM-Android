@@ -27,7 +27,7 @@ import polytechnice.ihm.projet.Contacts.Person;
  */
 public class ThirdFragment extends Fragment {
 
-    ContactsAdapter contactsAdapter;
+    private ContactsAdapter contactsAdapter;
     private final static String FILE = "contact.json";
 
     @Override
