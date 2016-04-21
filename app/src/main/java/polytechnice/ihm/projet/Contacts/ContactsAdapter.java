@@ -2,6 +2,8 @@ package polytechnice.ihm.projet.Contacts;
 
 import android.content.Context;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +41,10 @@ public class ContactsAdapter extends ArrayAdapter<Person> {
         roomcontact.setText("Salle : " + person.getRoom());
 
         TextView emailContact = (TextView) convertView.findViewById(R.id.email_contact);
-        emailContact.setText(Html.fromHtml(person.getEmail()));
+        emailContact.setLinksClickable(true);
+        emailContact.setMovementMethod(LinkMovementMethod.getInstance());
+        emailContact.setText(SafeURLSpan.parseSafeHtml("<a href=\"mailto:"+ Html.fromHtml(person.getEmail()) + "\">" + Html.fromHtml(person.getEmail()) + "</a>"));
+
 
         TextView phonenumercontact = (TextView) convertView.findViewById(R.id.phonenumber_contact);
         phonenumercontact.setText("Tel : " + person.getPhonenumber());

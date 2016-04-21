@@ -4,34 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="3dp"
-    android:background="@drawable/separator_contact">
+    android:background="@drawable/separator_contact"
+    android:clickable="false">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name_contact"
         android:textStyle="bold"
-        android:textColor="#5894CF"
-        android:paddingLeft="3dp"/>
+        android:textColor="#8BC34A"
+        android:paddingLeft="5dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/room_contact"
-        android:paddingLeft="3dp"/>
+        android:paddingLeft="13dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/phonenumber_contact"
-        android:paddingLeft="3dp"
+        android:paddingLeft="13dp"
         android:autoLink="phone"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email_contact"
-        android:paddingLeft="3dp"/>
+        android:paddingLeft="13dp"
+        android:paddingBottom="3dp"
+        android:clickable="true" />
 
 
 </LinearLayout>

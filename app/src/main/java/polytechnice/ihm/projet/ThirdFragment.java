@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,26 +49,6 @@ public class ThirdFragment extends Fragment {
 
         final ListView listView = (ListView) rootView.findViewById(R.id.lien_contact);
         listView.setAdapter(contactsAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("Send email", "");
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setData(Uri.parse("mailto:"));
-                intent.putExtra(Intent.EXTRA_EMAIL, people.get(position).getEmail());
-                intent.putExtra(Intent.EXTRA_SUBJECT, "subject");
-                intent.putExtra(Intent.EXTRA_TEXT, "mail body");
-                intent.setType("text/plain");
-                try {
-                    startActivity(Intent.createChooser(intent, ""));
-                    Log.i("Finished sending email.", "");
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(getContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
 
         return rootView;
     }
