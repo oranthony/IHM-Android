@@ -24,6 +24,7 @@ import polytechnice.ihm.projet.R;
 import polytechnice.ihm.projet.ThirdFragment;
 
 /**
+ * Displays an article
  * @author Patrice Camousseigt
  */
 public class ArticleView extends Fragment {
@@ -41,6 +42,11 @@ public class ArticleView extends Fragment {
         return inflater.inflate(R.layout.article_view, container, false);
     }
 
+    /**
+     * Loads the data of the articles
+     * @param view the view
+     * @param savedInstanceState the savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -80,7 +86,11 @@ public class ArticleView extends Fragment {
 
     }
 
-
+    /**
+     * Create a new instance of ArticleView recovering the data of the article
+     * @param article the article
+     * @return the fragment created with arguments set
+     */
     public static ArticleView newInstance(Article article) {
         ArticleView fragment = new ArticleView();
         Bundle args = new Bundle();
@@ -92,6 +102,11 @@ public class ArticleView extends Fragment {
         return fragment;
     }
 
+    /**
+     * Concatenation of the link
+     * @param link the link wanted to be concatenated
+     * @return the link concatenated
+     */
     private String toYoutubePreview(String link) {
         return "http://i1.ytimg.com/vi/" + link.split("=")[1] + "/default.jpg";
     }

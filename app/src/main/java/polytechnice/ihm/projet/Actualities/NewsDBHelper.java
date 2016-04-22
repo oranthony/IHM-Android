@@ -16,6 +16,9 @@ import java.util.List;
 
 import polytechnice.ihm.projet.BuildConfig;
 
+/**
+ * Loads the polynews_database database
+ */
 public class NewsDBHelper extends SQLiteOpenHelper {
 
     private final static String DB_PATH = "/data/data/" + BuildConfig.APPLICATION_ID + "/";
@@ -87,11 +90,9 @@ public class NewsDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase checkDB = null;
         try{
             String myPath = DB_PATH + DB_NAME;
-            //System.out.println("\n\n\n\n\n"+ DB_PATH + "---" + DB_NAME + "\n\n\n\n\n");
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
         } catch(SQLiteException e){
             System.out.println("DATABASE INTROUVABLE");
-            //database doesn't exist yet.
         }
         if(checkDB != null){
             checkDB.close();

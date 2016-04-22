@@ -24,14 +24,17 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
     private String mediaPath;
 
-    public NewsCustomAdapter(Context context, int resource) {
-        super(context, resource);
-    }
-
     public NewsCustomAdapter(Context context, int resource, List<Article> article) {
         super(context, resource, article);
     }
 
+    /**
+     * Creates an adapter with cardviews with data set
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -44,12 +47,12 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
         TextView titleView = (TextView) convertView.findViewById(R.id.title);
         TextView dateView = (TextView) convertView.findViewById(R.id.date);
-        TextView categorieView = (TextView) convertView.findViewById(R.id.categorie);
+        TextView categoryView = (TextView) convertView.findViewById(R.id.categorie);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.previewImage);
 
         titleView.setText(article.getTitle());
         dateView.setText(article.getDate());
-        categorieView.setText(article.getCategory().name());
+        categoryView.setText(article.getCategory().name());
         mediaPath = article.getUrl();
 
         if(article.getUrl().contains("youtube")) {
@@ -67,12 +70,13 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
     }
 
+    /**
+     * Concatenation of the link
+     * @param link the link wanted to be concatenated
+     * @return the link concatenated
+     */
     private String toYoutubePreview(String link) {
         return "http://i1.ytimg.com/vi/" + link.split("=")[1] + "/default.jpg";
     }
 
-
-    public String getMediaPath() {
-        return mediaPath;
-    }
 }
