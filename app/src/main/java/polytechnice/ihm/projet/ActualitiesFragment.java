@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.RelativeLayout;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,6 +29,9 @@ public class ActualitiesFragment extends Fragment {
     private NewsCustomAdapter newsCustomAdapterHead;
     private NewsCustomAdapter newsCustomAdapter;
 
+    private static final int ORIENTATION_PORTRAIT = 1;
+    private static final int ORIENTATION_LANDSCAPE = 2;
+
     /**
      * Creates the view of article from a database
      * @param inflater the inflater
@@ -39,6 +43,7 @@ public class ActualitiesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         NewsDBHelper db = null;
+
         try {
             db = new NewsDBHelper(getContext());
         } catch (SQLException | IOException e) {
@@ -48,36 +53,47 @@ public class ActualitiesFragment extends Fragment {
         try {
             db.createDataBase();
             db.openDataBase();
+        } catch (SQLException | IOException e) {
+            e.printStackTrace();
+        }
 
-            List<Article> articles = db.readDB();
+        List<Article> articles = db.readDB();
+
+        final View rootView;
+
+        int surfaceOrientation = getResources().getConfiguration().orientation;
+
+        if (surfaceOrientation == ORIENTATION_PORTRAIT) {
+
+            rootView = inflater.inflate(R.layout.fragment_news_list_portrait, container, false);
+
             List<Article> articleHead = articles.subList(0, 1);
             List<Article> articlesNew = articles.subList(1, articles.size());
 
             newsCustomAdapterHead = new NewsCustomAdapter(getContext(), R.id.head_articles, articleHead);
             newsCustomAdapter = new NewsCustomAdapter(getContext(), R.id.newsList, articlesNew);
 
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
+            final GridView gridViewHead = (GridView) rootView.findViewById(R.id.head_articles);
+            gridViewHead.setAdapter(newsCustomAdapterHead);
+
+            gridViewHead.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                    ArticleView fragmentClass = ArticleView.newInstance((Article) gridViewHead.getItemAtPosition(position));
+
+                    FragmentManager fragmentManager = getFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
+                }
+            });
         }
-
-        final View rootView = inflater.inflate(R.layout.fragment_news_list, container, false);
-
-        final GridView gridViewHead = (GridView) rootView.findViewById(R.id.head_articles);
-        gridViewHead.setAdapter(newsCustomAdapterHead);
+        else { // if ORIENTATION_LANDSCAPE
+            rootView = inflater.inflate(R.layout.fragment_news_list_landscape, container, false);
+            newsCustomAdapter = new NewsCustomAdapter(getContext(), R.id.newsList, articles);
+        }
 
         final GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
-
-        gridViewHead.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-
-                ArticleView fragmentClass = ArticleView.newInstance((Article) gridViewHead.getItemAtPosition(position));
-
-                FragmentManager fragmentManager = getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.main_container, fragmentClass).commit();
-            }
-        });
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

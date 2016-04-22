@@ -13,18 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-
-    <GridView
-        android:layout_width="170dp"
-        android:layout_height="200dp"
-        android:id="@+id/head_articles"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-5dp"
-        android:layout_marginBottom="-25dp">
-
-    </GridView>
-
     <GridView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +20,6 @@
         android:clickable="false"
         android:columnWidth="150dp"
         android:numColumns="auto_fit"
-        android:layout_below="@id/head_articles"
-        android:paddingBottom="24px" />
+        android:paddingBottom="24dp" />
 
 </RelativeLayout>
