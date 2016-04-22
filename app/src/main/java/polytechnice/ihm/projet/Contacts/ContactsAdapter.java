@@ -54,10 +54,7 @@ public class ContactsAdapter extends ArrayAdapter<Person> {
         roomcontact.setText("Salle : " + person.getRoom());
 
         TextView emailContact = (TextView) convertView.findViewById(R.id.email_contact);
-        emailContact.setLinksClickable(true);
-        emailContact.setMovementMethod(LinkMovementMethod.getInstance());
-        emailContact.setText(SafeURLSpan.parseSafeHtml("<a href=\"mailto:"+ Html.fromHtml(person.getEmail()) + "\">" + Html.fromHtml(person.getEmail()) + "</a>"));
-
+        emailContact.setText(Html.fromHtml(person.getEmail()));
 
         TextView phonenumercontact = (TextView) convertView.findViewById(R.id.phonenumber_contact);
         phonenumercontact.setText("Tel : " + person.getPhonenumber());

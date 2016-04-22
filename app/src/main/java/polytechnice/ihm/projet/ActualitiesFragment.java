@@ -60,7 +60,7 @@ public class ActualitiesFragment extends Fragment {
             e.printStackTrace();
         }
 
-        final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_news_list, container, false);
 
         final GridView gridViewHead = (GridView) rootView.findViewById(R.id.head_articles);
         gridViewHead.setAdapter(newsCustomAdapterHead);
