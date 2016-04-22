@@ -1,6 +1,7 @@
 package polytechnice.ihm.projet.Actualities;
 
 /**
+ * The structure of an article
  * @author Anthony Loroscio
  */
 public class Article {

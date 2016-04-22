@@ -1,19 +1,13 @@
 package polytechnice.ihm.projet;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.AssetManager;
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,13 +18,20 @@ import polytechnice.ihm.projet.Contacts.ParserContact;
 import polytechnice.ihm.projet.Contacts.Person;
 
 /**
+ * Creates the view of the fourth fragment Contacts
  * @author Patrice Camousseigt
  */
-public class ThirdFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 
-    private ContactsAdapter contactsAdapter;
     private final static String FILE = "contact.json";
 
+    /**
+     * Creates the view with an adapter from list of people parsed
+     * @param inflater the inflater
+     * @param container the container
+     * @param savedInstanceState the saved instances
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -43,7 +44,7 @@ public class ThirdFragment extends Fragment {
 
         final ArrayList<Person> people =  new ParserContact(jsondata).getPeople();
 
-        contactsAdapter = new ContactsAdapter(getContext(), R.id.lien_contact, people);
+        ContactsAdapter contactsAdapter = new ContactsAdapter(getContext(), R.id.lien_contact, people);
 
         final View rootView = inflater.inflate(R.layout.list_contacts, container, false);
 
@@ -53,12 +54,23 @@ public class ThirdFragment extends Fragment {
         return rootView;
     }
 
-    public static ThirdFragment newInstance() {
-        ThirdFragment fragment = new ThirdFragment();
+    /**
+     * Creates a new instance of contacts Fragment
+     * @return the fragment created
+     */
+    public static ContactsFragment newInstance() {
+        ContactsFragment fragment = new ContactsFragment();
         return fragment;
     }
 
-    public static String jsonToStringFromAssetFolder(String fileName,Context context) throws IOException {
+    /**
+     * Convert a json from a file to a string
+     * @param fileName the file
+     * @param context the context
+     * @return the string
+     * @throws IOException
+     */
+    public static String jsonToStringFromAssetFolder(String fileName, Context context) throws IOException {
         AssetManager manager = context.getAssets();
         InputStream file = manager.open(fileName);
 

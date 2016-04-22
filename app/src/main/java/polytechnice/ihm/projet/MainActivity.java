@@ -1,7 +1,6 @@
 package polytechnice.ihm.projet;
 
 
-import android.app.ListFragment;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,14 +18,12 @@ import android.widget.TextView;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
-import com.twitter.sdk.android.tweetui.UserTimeline;
 
 import io.fabric.sdk.android.Fabric;
 import polytechnice.ihm.projet.siPresentation.SIPresentationFragment;
 
 /**
- * Created by anthony LOROSCIO on 28/03/2016.
+ * @author Anthony Loroscio
  */
 public class MainActivity extends AppCompatActivity{
     private DrawerLayout mDrawer;
@@ -105,28 +102,28 @@ public class MainActivity extends AppCompatActivity{
         Class fragmentClass;
 
         switch(menuItem.getItemId()) {
-            case R.id.nav_first_fragment: //actualities
-                fragmentClass = FirstFragment.class;
+            case R.id.nav_first_fragment: // actualities
+                fragmentClass = ActualitiesFragment.class;
                 showToolBar();
                 break;
 
-            case R.id.nav_twitter_fragment:
+            case R.id.nav_twitter_fragment: // onTwitter
                 fragmentClass = TwitterFragment.class;
                 showToolBar();
                 break;
 
-            case R.id.nav_contact:
-                fragmentClass = ThirdFragment.class;
+            case R.id.nav_contact: // contacts
+                fragmentClass = ContactsFragment.class;
                 showToolBar();
                 break;
 
-            case R.id.nav_si_presentation:
+            case R.id.nav_si_presentation: // presentation
                 fragmentClass = SIPresentationFragment.class;
                 showToolBar();
                 break;
 
             default:
-                fragmentClass = FirstFragment.class;
+                fragmentClass = ActualitiesFragment.class;
                 showToolBar();
                 break;
         }

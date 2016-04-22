@@ -3,7 +3,6 @@ package polytechnice.ihm.projet.Contacts;
 import android.content.Context;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,14 +14,28 @@ import java.util.List;
 import polytechnice.ihm.projet.R;
 
 /**
+ * Create a inflater of a list of people
  * @author Patrice Camousseigt
  */
 public class ContactsAdapter extends ArrayAdapter<Person> {
 
+    /**
+     * Constructor
+     * @param context the context
+     * @param resource the resource
+     * @param people the list of people
+     */
     public ContactsAdapter(Context context, int resource, List<Person> people) {
         super(context, resource, people);
     }
 
+    /**
+     * Create the inflater of an article
+     * @param position the position of the article
+     * @param convertView the view associated
+     * @param parent the parent view
+     * @return the inflate of a contact
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
 

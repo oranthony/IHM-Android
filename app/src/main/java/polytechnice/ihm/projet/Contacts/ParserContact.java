@@ -1,22 +1,16 @@
 package polytechnice.ihm.projet.Contacts;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import polytechnice.ihm.projet.BuildConfig;
 
 /**
+ * Parse a json file to get data from contacts
  * @author Patrice Camousseigt
  */
 public class ParserContact {
@@ -25,6 +19,10 @@ public class ParserContact {
     private JsonObject jsonObject;
 
 
+    /**
+     * Constructor
+     * @param jsonString A string with information inside to parse
+     */
     public ParserContact(String jsonString) {
 
         JsonParser parser = new JsonParser();

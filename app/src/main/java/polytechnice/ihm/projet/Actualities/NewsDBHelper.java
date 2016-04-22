@@ -18,6 +18,8 @@ import polytechnice.ihm.projet.BuildConfig;
 
 /**
  * Loads the polynews_database database
+ * @author Anthony Loroscio
+ * @author Patrice Camousseigt
  */
 public class NewsDBHelper extends SQLiteOpenHelper {
 

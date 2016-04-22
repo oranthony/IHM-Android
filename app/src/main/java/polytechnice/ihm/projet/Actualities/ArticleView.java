@@ -1,27 +1,17 @@
 package polytechnice.ihm.projet.Actualities;
 
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import polytechnice.ihm.projet.FirstFragment;
 import polytechnice.ihm.projet.R;
-
-
-import polytechnice.ihm.projet.ThirdFragment;
 
 /**
  * Displays an article

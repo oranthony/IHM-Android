@@ -1,10 +1,7 @@
 package polytechnice.ihm.projet;
 
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,22 +20,28 @@ import polytechnice.ihm.projet.Actualities.NewsDBHelper;
 
 
 /**
+ * Creates the view of the second fragment Actualities
  * @author Patrice Camousseigt
  */
-public class FirstFragment extends Fragment {
+public class ActualitiesFragment extends Fragment {
 
     private NewsCustomAdapter newsCustomAdapterHead;
     private NewsCustomAdapter newsCustomAdapter;
 
+    /**
+     * Creates the view of article from a database
+     * @param inflater the inflater
+     * @param container the container
+     * @param savedInstanceState the saved instances
+     * @return the view
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         NewsDBHelper db = null;
         try {
             db = new NewsDBHelper(getContext());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
 
@@ -53,9 +56,7 @@ public class FirstFragment extends Fragment {
             newsCustomAdapterHead = new NewsCustomAdapter(getContext(), R.id.head_articles, articleHead);
             newsCustomAdapter = new NewsCustomAdapter(getContext(), R.id.newsList, articlesNew);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
 
@@ -67,12 +68,9 @@ public class FirstFragment extends Fragment {
         final GridView gridView = (GridView) rootView.findViewById(R.id.newsList);
         gridView.setAdapter(newsCustomAdapter);
 
-
         gridViewHead.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 ArticleView fragmentClass = ArticleView.newInstance((Article) gridViewHead.getItemAtPosition(position));
 
@@ -83,9 +81,7 @@ public class FirstFragment extends Fragment {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
                 ArticleView fragmentClass = ArticleView.newInstance((Article) gridView.getItemAtPosition(position));
 
@@ -98,13 +94,13 @@ public class FirstFragment extends Fragment {
         return rootView;
     }
 
-    public static FirstFragment newInstance() {
-        FirstFragment fragment = new FirstFragment();
+    /**
+     * Creates a new instance of the Actualities fragment
+     * @return
+     */
+    public static ActualitiesFragment newInstance() {
+        ActualitiesFragment fragment = new ActualitiesFragment();
         return fragment;
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-    }
 }

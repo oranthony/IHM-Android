@@ -1,9 +1,6 @@
 package polytechnice.ihm.projet.Actualities;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +10,23 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-import polytechnice.ihm.projet.FirstFragment;
 import polytechnice.ihm.projet.R;
 
 
 /**
+ * @author Anthony Loroscio
  * @author Patrice Camousseigt
  */
 public class NewsCustomAdapter extends ArrayAdapter<Article> {
 
     private String mediaPath;
 
+    /**
+     * Constructor
+     * @param context the context
+     * @param resource the resource
+     * @param article the list of articles
+     */
     public NewsCustomAdapter(Context context, int resource, List<Article> article) {
         super(context, resource, article);
     }
@@ -33,7 +36,7 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
      * @param position
      * @param convertView
      * @param parent
-     * @return
+     * @return the view
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
@@ -51,7 +54,7 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.previewImage);
 
         titleView.setText(article.getTitle());
-        dateView.setText(article.getDate());
+        dateView.setText(withoutHours(article.getDate()));
         categoryView.setText(article.getCategory().name());
         mediaPath = article.getUrl();
 
@@ -77,6 +80,10 @@ public class NewsCustomAdapter extends ArrayAdapter<Article> {
      */
     private String toYoutubePreview(String link) {
         return "http://i1.ytimg.com/vi/" + link.split("=")[1] + "/default.jpg";
+    }
+
+    private String withoutHours(String date) {
+        return date.split(" ")[0];
     }
 
 }

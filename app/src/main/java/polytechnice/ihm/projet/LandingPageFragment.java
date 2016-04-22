@@ -16,7 +16,7 @@ import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
 /**
- * Created by anthony LOROSCIO on 04/04/2016.
+ * @author Anthony Loroscio
  */
 public class LandingPageFragment extends ListFragment {
 

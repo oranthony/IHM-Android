@@ -1,6 +1,7 @@
 package polytechnice.ihm.projet.Contacts;
 
 /**
+ * A person
  * @author Patrice Camousseigt
  */
 public class Person {

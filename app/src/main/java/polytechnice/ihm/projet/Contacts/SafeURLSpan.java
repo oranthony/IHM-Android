@@ -9,11 +9,24 @@ import android.text.Spannable;
 import android.text.style.URLSpan;
 import android.view.View;
 
+/**
+ * Make safe the click of an URL
+ * @author Patrice Camousseigt
+ */
 public final class SafeURLSpan extends URLSpan {
+
+    /**
+     * Constructor
+     * @param url the url
+     */
     public SafeURLSpan(String url) {
         super(url);
     }
 
+    /**
+     * The action done clicking on a widget
+     * @param widget
+     */
     @Override
     public void onClick(View widget) {
         try {
@@ -28,10 +41,20 @@ public final class SafeURLSpan extends URLSpan {
         }
     }
 
+    /**
+     * Parse a html CharSequence
+     * @param html the html CharSequence
+     * @return the new CharSequence
+     */
     public static CharSequence parseSafeHtml(CharSequence html) {
         return replaceURLSpans(Html.fromHtml(html.toString()));
     }
 
+    /**
+     * Replace URL spans
+     * @param text the text
+     * @return the new text
+     */
     public static CharSequence replaceURLSpans(CharSequence text) {
         if (text instanceof Spannable) {
             final Spannable s = (Spannable)text;
