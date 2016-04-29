@@ -194,9 +194,9 @@ public class MainActivity extends AppCompatActivity{
         drawerToggle.onConfigurationChanged(newConfig);
 
         // if we are on the landingPage we do not show the toolbar
-        if (!isLandingPage) {
+        /*if (!isLandingPage) {
             showToolBar();
-        }
+        }*/
 
     }
 }
