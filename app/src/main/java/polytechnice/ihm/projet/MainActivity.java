@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity{
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
     private Toolbar toolbar;
+    private int surfaceOrientation;
 
     //Hidden layout
     private SlidingUpPanelLayout mLayout;
@@ -38,6 +39,11 @@ public class MainActivity extends AppCompatActivity{
     //Twitter
     private static final String TWITTER_KEY = "uoS5Row3TjfSQmwiFs7qKrQgj";
     private static final String TWITTER_SECRET = "4VXVrzsPgxfohiqzG5kIZrxCf4B14daEqM9gVToDO0VanjeZdd";
+
+    //Orientation mode
+    private static final int ORIENTATION_PORTRAIT = 1;
+    private static final int ORIENTATION_LANDSCAPE = 2;
+    private boolean isLandingPage = true;
 
 
 
@@ -51,6 +57,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         init();
+
+
 
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -78,6 +86,8 @@ public class MainActivity extends AppCompatActivity{
         fragmentTransaction.add(R.id.main_container, fragment);
         fragmentTransaction.commit();
 
+        //surfaceOrientation = getResources().getConfiguration().orientation;
+
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
@@ -95,7 +105,8 @@ public class MainActivity extends AppCompatActivity{
                 });
     }
 
-    public void selectDrawerItem(MenuItem menuItem) {
+
+        public void selectDrawerItem(MenuItem menuItem) {
 
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
@@ -104,27 +115,22 @@ public class MainActivity extends AppCompatActivity{
         switch(menuItem.getItemId()) {
             case R.id.nav_first_fragment: // actualities
                 fragmentClass = ActualitiesFragment.class;
-                showToolBar();
                 break;
 
             case R.id.nav_twitter_fragment: // onTwitter
                 fragmentClass = TwitterFragment.class;
-                showToolBar();
                 break;
 
             case R.id.nav_contact: // contacts
                 fragmentClass = ContactsFragment.class;
-                showToolBar();
                 break;
 
             case R.id.nav_si_presentation: // presentation
                 fragmentClass = SIPresentationFragment.class;
-                showToolBar();
                 break;
 
             default:
                 fragmentClass = ActualitiesFragment.class;
-                showToolBar();
                 break;
         }
 
@@ -133,6 +139,10 @@ public class MainActivity extends AppCompatActivity{
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //Show the toolbar
+        showToolBar();
+        isLandingPage = false;
 
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -182,5 +192,11 @@ public class MainActivity extends AppCompatActivity{
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
+
+        // if we are on the landingPage we do not show the toolbar
+        if (!isLandingPage) {
+            showToolBar();
+        }
+
     }
 }

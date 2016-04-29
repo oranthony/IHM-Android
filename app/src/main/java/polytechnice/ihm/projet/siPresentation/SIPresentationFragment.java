@@ -1,13 +1,11 @@
 package polytechnice.ihm.projet.siPresentation;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import android.widget.LinearLayout;
 
 import java.io.File;
 
-import polytechnice.ihm.projet.MainActivity;
 import polytechnice.ihm.projet.R;
 
 /**
@@ -32,9 +29,21 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
     private LinearLayout layoutScroll;
     private float alpha, alphaBackground;
 
+    private View v;
+
+    private static final int ORIENTATION_PORTRAIT = 1;
+    private static final int ORIENTATION_LANDSCAPE = 2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.sipresentation, container, false);
+
+        int surfaceOrientation = getResources().getConfiguration().orientation;
+
+        if (surfaceOrientation == ORIENTATION_PORTRAIT) {
+            v = inflater.inflate(R.layout.sipresentationportrait, container, false);
+        }else { //Landscape
+            v = inflater.inflate(R.layout.sipresentationlandscape, container, false);
+        }
 
         layoutScroll = (LinearLayout) v.findViewById(R.id.layoutScroll);
         mBlurredImage = (ImageView) v.findViewById(R.id.blurredImage);
