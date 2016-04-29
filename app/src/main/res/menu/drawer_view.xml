@@ -4,8 +4,8 @@
 
         <item
             android:id="@+id/nav_si_presentation"
-            android:icon="@drawable/news"
-            android:title="Présentation" />
+            android:icon="@drawable/polytech"
+            android:title="Présentation SI3" />
 
         <item
             android:id="@+id/nav_first_fragment"
@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_twitter_fragment"
             android:icon="@drawable/social"
-            android:title="Twitter" />
+            android:title="Mur de tweets" />
 
         <item
             android:id="@+id/nav_contact"
