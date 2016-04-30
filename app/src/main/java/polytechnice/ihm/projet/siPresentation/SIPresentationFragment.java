@@ -122,6 +122,7 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         if (paddingTop != 0) {
             alpha = (float) (t) / paddingTop;
             alphaBackground = alpha;
+
         }
 
         // Apply a ceil
