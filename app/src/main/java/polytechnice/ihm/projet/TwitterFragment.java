@@ -14,8 +14,6 @@ import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
  */
 public class TwitterFragment extends ListFragment{
 
-    //TODO Rename view like #Polytech'Nice => understand that the 2 views are different => Mur de tweet
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

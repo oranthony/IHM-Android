@@ -54,21 +54,7 @@
                     android:paddingRight="24px"
                     android:paddingTop="24px"
                     android:textColor="#5894CF"
-                    android:text="La troisième année de la spécialité informatique constitue un socle commun et permet l'apprentissage des bases fondamentales et techniques de l'informatique et du métier d'ingénieur.\n \n
-
-Le quart des enseignements relève des Sciences Humaines et Sociales ou de l'enseignement des langues. Les cours de connaissances de l'entreprise, de techniques d'expression et de gestion de projet préparent l'èlève à son entrée dans le monde de l'entreprise.\n \n
-
-Un autre quart est consacré aux fondements de l'informatique.\n \n
-
-Une moitié des enseignements concerne l'informatique appliquée Le dernier quart est consacré à l'architecture et l'assembleur.\n \n
-
-En parallèle de ces enseignements, tout au long de l'année, des mini projets permettent aux élèves d'appliquer immédiatement leurs nouvelles connaissances. \n \n
-
-A la fin de chaque semestre un projet d'une semaine en programmation est proposé. \n \n
-
-
-A l'issue de cette troisième année, les élèves doivent effectuer un stage d'au moins un mois, dit stage de connaissance de l'entreprise. \n\n"/>
-
+                    android:text="@string/si3_presentation"/>
             </LinearLayout>
         </LinearLayout>
 

@@ -22,6 +22,8 @@ import polytechnice.ihm.projet.R;
  */
 public class SIPresentationFragment extends Fragment implements BlurScrollView.OnScrollViewListener {
 
+    //TODO ADD ICON TO SCROLL
+
     private static final String BLURRED_IMG_PATH = "blurred_image.png";
     private BlurScrollView mScrollView;
     private ImageView mBlurredImage, mBackground;

@@ -13,4 +13,20 @@
     <string name="fonctionne">Ca fonctionne : %1$d</string>
 
     <string name="image_of_the_article">image of the article</string>
+
+    <string name="si3_presentation">
+        "La troisième année de la spécialité informatique constitue un socle commun et permet l'apprentissage des bases fondamentales et techniques de l'informatique et du métier d'ingénieur.
+
+Le quart des enseignements relève des Sciences Humaines et Sociales ou de l'enseignement des langues. Les cours de connaissances de l'entreprise, de techniques d'expression et de gestion de projet préparent l'èlève à son entrée dans le monde de l'entreprise.
+
+Un autre quart est consacré aux fondements de l'informatique.
+
+Une moitié des enseignements concerne l'informatique appliquée Le dernier quart est consacré à l'architecture et l'assembleur.
+
+En parallèle de ces enseignements, tout au long de l'année, des mini projets permettent aux élèves d'appliquer immédiatement leurs nouvelles connaissances.
+
+A la fin de chaque semestre un projet d'une semaine en programmation est proposé.
+
+A l'issue de cette troisième année, les élèves doivent effectuer un stage d'au moins un mois, dit stage de connaissance de l'entreprise."
+    </string>
 </resources>
