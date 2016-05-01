@@ -24,6 +24,7 @@ import polytechnice.ihm.PolyNews.siPresentation.SIPresentationFragment;
 
 /**
  * @author Anthony Loroscio
+ * This is the only activity on the application. It handles the sidebar menu and the fragment load.
  */
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Initialisation of the twitter core
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
 
@@ -69,12 +71,13 @@ public class MainActivity extends AppCompatActivity {
         setupDrawerContent(nvDrawer);
 
         //Hide the title in the landing page (we wanted to hide the toolbar in the landing page to
-        //make it look better but we had to drop this idea because it was making troubles with the
-        //others fragments when we change their orientation
+        //make it look prettier but we had to drop this idea because it was making troubles with the
+        //others fragments when we change their orientation)
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         toolbar.setBackgroundDrawable(new ColorDrawable(0xff8BC34A));
 
+        //We load the landing page fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
@@ -100,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * CHange the current fragment by the new one selected on the menu
+     * @param menuItem the selected item on the menu
+     */
     public void selectDrawerItem(MenuItem menuItem) {
 
         // Create a new fragment and specify the fragment to show based on nav item clicked
@@ -166,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // `onPostCreate` called when activity start-up is complete after `onStart()`
-    // NOTE! Make sure to override the method with only a single `Bundle` argument
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);

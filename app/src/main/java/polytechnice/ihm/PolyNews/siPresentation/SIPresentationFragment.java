@@ -19,10 +19,10 @@ import polytechnice.ihm.PolyNews.R;
 
 /**
  * Created by anthony LOROSCIO on 20/04/2016.
+ * Based on blur effect framework :  https://github.com/sasij/Etsy-Blur-List-effect-for-Android
+ * This is the fragment which introduce the SI3 curriculum
  */
 public class SIPresentationFragment extends Fragment implements BlurScrollView.OnScrollViewListener {
-
-    //TODO ADD ICON TO SCROLL
 
     private static final String BLURRED_IMG_PATH = "blurred_image.png";
     private BlurScrollView mScrollView;
@@ -33,6 +33,7 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
 
     private View v;
 
+    //Orientations variables
     private static final int ORIENTATION_PORTRAIT = 1;
     private static final int ORIENTATION_LANDSCAPE = 2;
 
@@ -69,7 +70,6 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
     }
 
     public void onCreate(Bundle savedInstanceState){
-
         super.onCreate(savedInstanceState);
     }
 

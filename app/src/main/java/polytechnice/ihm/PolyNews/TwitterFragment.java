@@ -18,6 +18,8 @@ public class TwitterFragment extends ListFragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //We do a Timeline base on the keyword "polytechnice" so we get both the tweets from the
+        //official account and all the others tweets related to polytechnice
         final SearchTimeline searchTimeline = new SearchTimeline.Builder()
                 .query("polytechnice")
                 .build();
