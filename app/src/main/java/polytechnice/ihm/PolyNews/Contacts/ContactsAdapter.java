@@ -1,8 +1,7 @@
-package polytechnice.ihm.projet.Contacts;
+package polytechnice.ihm.PolyNews.Contacts;
 
 import android.content.Context;
 import android.text.Html;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import polytechnice.ihm.projet.R;
+import polytechnice.ihm.PolyNews.R;
 
 /**
  * Create a inflater of a list of people

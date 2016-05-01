@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

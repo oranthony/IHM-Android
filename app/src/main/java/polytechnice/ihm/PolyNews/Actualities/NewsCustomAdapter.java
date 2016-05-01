@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Actualities;
+package polytechnice.ihm.PolyNews.Actualities;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-import polytechnice.ihm.projet.R;
+import polytechnice.ihm.PolyNews.R;
 
 
 /**

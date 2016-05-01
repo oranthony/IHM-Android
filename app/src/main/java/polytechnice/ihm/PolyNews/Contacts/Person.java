@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Contacts;
+package polytechnice.ihm.PolyNews.Contacts;
 
 /**
  * A person

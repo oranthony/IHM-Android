@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Actualities;
+package polytechnice.ihm.PolyNews.Actualities;
 
 /**
  * The structure of an article

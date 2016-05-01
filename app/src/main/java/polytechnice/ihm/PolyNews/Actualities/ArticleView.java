@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Actualities;
+package polytechnice.ihm.PolyNews.Actualities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import polytechnice.ihm.projet.R;
+import polytechnice.ihm.PolyNews.R;
 
 /**
  * Displays an article

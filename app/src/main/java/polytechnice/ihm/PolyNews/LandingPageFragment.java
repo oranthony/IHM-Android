@@ -1,9 +1,8 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,9 +21,6 @@ public class LandingPageFragment extends ListFragment {
 
     //Sliding panel layout
     private SlidingUpPanelLayout  slider;
-
-    //Swipe up detector
-    private GestureDetector gDetector;
 
     private ListView _menuListView;
 

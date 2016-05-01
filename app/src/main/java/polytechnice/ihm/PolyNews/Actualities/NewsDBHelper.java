@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Actualities;
+package polytechnice.ihm.PolyNews.Actualities;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import polytechnice.ihm.projet.BuildConfig;
+import polytechnice.ihm.PolyNews.BuildConfig;
 
 /**
  * Loads the polynews_database database

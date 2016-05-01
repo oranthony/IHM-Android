@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,16 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.RelativeLayout;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import polytechnice.ihm.projet.Actualities.Article;
-import polytechnice.ihm.projet.Actualities.ArticleView;
-import polytechnice.ihm.projet.Actualities.NewsCustomAdapter;
-import polytechnice.ihm.projet.Actualities.NewsDBHelper;
+import polytechnice.ihm.PolyNews.Actualities.Article;
+import polytechnice.ihm.PolyNews.Actualities.ArticleView;
+import polytechnice.ihm.PolyNews.Actualities.NewsCustomAdapter;
+import polytechnice.ihm.PolyNews.Actualities.NewsDBHelper;
 
 
 /**

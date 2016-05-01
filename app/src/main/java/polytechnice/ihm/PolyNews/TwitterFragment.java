@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;

@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.siPresentation;
+package polytechnice.ihm.PolyNews.siPresentation;
 
 /**
  * Created by juanjo on 28/05/14.

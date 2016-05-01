@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import polytechnice.ihm.projet.Contacts.ContactsAdapter;
-import polytechnice.ihm.projet.Contacts.ParserContact;
-import polytechnice.ihm.projet.Contacts.Person;
+import polytechnice.ihm.PolyNews.Contacts.ContactsAdapter;
+import polytechnice.ihm.PolyNews.Contacts.ParserContact;
+import polytechnice.ihm.PolyNews.Contacts.Person;
 
 /**
  * Creates the view of the fourth fragment Contacts

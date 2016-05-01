@@ -24,7 +24,7 @@
         android:layout_height="@dimen/blur_image_height"
         android:alpha="0" />
 
-    <polytechnice.ihm.projet.siPresentation.BlurScrollView
+    <polytechnice.ihm.PolyNews.siPresentation.BlurScrollView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -58,6 +58,6 @@
             </LinearLayout>
         </LinearLayout>
 
-    </polytechnice.ihm.projet.siPresentation.BlurScrollView>
+    </polytechnice.ihm.PolyNews.siPresentation.BlurScrollView>
 
 </RelativeLayout>

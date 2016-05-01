@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.siPresentation;
+package polytechnice.ihm.PolyNews.siPresentation;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet;
+package polytechnice.ihm.PolyNews;
 
 
 import android.content.res.Configuration;
@@ -20,17 +20,16 @@ import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import io.fabric.sdk.android.Fabric;
-import polytechnice.ihm.projet.siPresentation.SIPresentationFragment;
+import polytechnice.ihm.PolyNews.siPresentation.SIPresentationFragment;
 
 /**
  * @author Anthony Loroscio
  */
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
     private Toolbar toolbar;
-    private int surfaceOrientation;
 
     //Hidden layout
     private SlidingUpPanelLayout mLayout;
@@ -39,13 +38,6 @@ public class MainActivity extends AppCompatActivity{
     //Twitter
     private static final String TWITTER_KEY = "uoS5Row3TjfSQmwiFs7qKrQgj";
     private static final String TWITTER_SECRET = "4VXVrzsPgxfohiqzG5kIZrxCf4B14daEqM9gVToDO0VanjeZdd";
-
-    //Orientation mode
-    private static final int ORIENTATION_PORTRAIT = 1;
-    private static final int ORIENTATION_LANDSCAPE = 2;
-    private boolean isLandingPage = true;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +51,10 @@ public class MainActivity extends AppCompatActivity{
         init();
 
 
-
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("PolyNews");
 
         // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -76,22 +68,24 @@ public class MainActivity extends AppCompatActivity{
         // Setup drawer view
         setupDrawerContent(nvDrawer);
 
-        //Hide the title in the landing page
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //Hide the title in the landing page (we wanted to hide the toolbar in the landing page to
+        //make it look better but we had to drop this idea because it was making troubles with the
+        //others fragments when we change their orientation
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        toolbar.setBackgroundDrawable(new ColorDrawable(0xff8BC34A));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        LandingPageFragment fragment = new LandingPageFragment();
+        final LandingPageFragment fragment = new LandingPageFragment();
         fragmentTransaction.add(R.id.main_container, fragment);
         fragmentTransaction.commit();
-
-        //surfaceOrientation = getResources().getConfiguration().orientation;
 
     }
 
     private ActionBarDrawerToggle setupDrawerToggle() {
-        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
+        return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -106,13 +100,13 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
-        public void selectDrawerItem(MenuItem menuItem) {
+    public void selectDrawerItem(MenuItem menuItem) {
 
         // Create a new fragment and specify the fragment to show based on nav item clicked
         Fragment fragment = null;
         Class fragmentClass;
 
-        switch(menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
             case R.id.nav_first_fragment: // actualities
                 fragmentClass = ActualitiesFragment.class;
                 break;
@@ -140,10 +134,6 @@ public class MainActivity extends AppCompatActivity{
             e.printStackTrace();
         }
 
-        //Show the toolbar
-        showToolBar();
-        isLandingPage = false;
-
         // Insert the fragment by replacing any existing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit();
@@ -159,17 +149,13 @@ public class MainActivity extends AppCompatActivity{
     /**
      * Initialization of the textview and SlidingUpPanelLayout
      */
-    public void init(){
+    public void init() {
 
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         //textView = (TextView) findViewById(R.id.TEST);
 
     }
 
-    public void showToolBar(){
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        toolbar.setBackgroundDrawable(new ColorDrawable(0xff8BC34A));
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -192,11 +178,6 @@ public class MainActivity extends AppCompatActivity{
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
-
-        // if we are on the landingPage we do not show the toolbar
-        /*if (!isLandingPage) {
-            showToolBar();
-        }*/
 
     }
 }

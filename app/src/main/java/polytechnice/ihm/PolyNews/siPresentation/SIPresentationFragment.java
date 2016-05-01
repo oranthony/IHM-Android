@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.siPresentation;
+package polytechnice.ihm.PolyNews.siPresentation;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 import java.io.File;
 
-import polytechnice.ihm.projet.R;
+import polytechnice.ihm.PolyNews.R;
 
 /**
  * Created by antho on 20/04/2016.

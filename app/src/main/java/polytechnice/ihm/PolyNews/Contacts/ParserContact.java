@@ -1,4 +1,4 @@
-package polytechnice.ihm.projet.Contacts;
+package polytechnice.ihm.PolyNews.Contacts;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -6,8 +6,6 @@ import com.google.gson.JsonParser;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-
-import polytechnice.ihm.projet.BuildConfig;
 
 /**
  * Parse a json file to get data from contacts
