@@ -22,6 +22,11 @@ public class LandingPageFragment extends ListFragment {
     //Sliding panel layout
     private SlidingUpPanelLayout  slider;
 
+    private static final int ORIENTATION_PORTRAIT = 1;
+    private static final int ORIENTATION_LANDSCAPE = 2;
+
+    private View v;
+
     private ListView _menuListView;
 
     private String htmlText = "<html><body> <style type=\"text/css\">body{color: #fff; font-size: 0.9em; text-align:justify;} </style> %s </body></Html>";
@@ -43,7 +48,13 @@ public class LandingPageFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.landing_page, container, false);
+        int surfaceOrientation = getResources().getConfiguration().orientation;
+
+        if (surfaceOrientation == ORIENTATION_PORTRAIT) {
+            v = inflater.inflate(R.layout.landing_page_portrait, container, false);
+        }else { //Landscape
+            v = inflater.inflate(R.layout.landing_page_landscape, container, false);
+        }
 
         slider = (SlidingUpPanelLayout)v.findViewById(R.id.sliding_layout);
 

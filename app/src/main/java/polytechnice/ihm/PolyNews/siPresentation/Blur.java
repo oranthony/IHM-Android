@@ -10,6 +10,10 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 
+/**
+ * Created by juanjo on 28/05/14.
+ */
+
 public class Blur {
 
 	private static final String TAG = "Blur";

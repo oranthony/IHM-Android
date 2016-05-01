@@ -18,7 +18,7 @@ import java.io.File;
 import polytechnice.ihm.PolyNews.R;
 
 /**
- * Created by antho on 20/04/2016.
+ * Created by anthony LOROSCIO on 20/04/2016.
  */
 public class SIPresentationFragment extends Fragment implements BlurScrollView.OnScrollViewListener {
 
@@ -42,9 +42,9 @@ public class SIPresentationFragment extends Fragment implements BlurScrollView.O
         int surfaceOrientation = getResources().getConfiguration().orientation;
 
         if (surfaceOrientation == ORIENTATION_PORTRAIT) {
-            v = inflater.inflate(R.layout.sipresentationportrait, container, false);
+            v = inflater.inflate(R.layout.si_presentation_portrait, container, false);
         }else { //Landscape
-            v = inflater.inflate(R.layout.sipresentationlandscape, container, false);
+            v = inflater.inflate(R.layout.si_presentation_landscape, container, false);
         }
 
         layoutScroll = (LinearLayout) v.findViewById(R.id.layoutScroll);

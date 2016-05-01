@@ -24,6 +24,15 @@
         android:layout_height="@dimen/blur_image_height"
         android:alpha="0" />
 
+    <ImageView
+        android:id="@+id/arrowUp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/arrowup"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
     <polytechnice.ihm.PolyNews.siPresentation.BlurScrollView
         android:id="@android:id/list"
         android:layout_width="match_parent"
